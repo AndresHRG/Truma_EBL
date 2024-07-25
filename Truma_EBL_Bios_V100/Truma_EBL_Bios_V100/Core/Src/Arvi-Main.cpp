@@ -210,8 +210,6 @@ void checkVariant()
 		variant = true;
 }
 
-int mamps;
-
 void Arvi_Main(void)
 {
 	devicesState();
@@ -225,7 +223,7 @@ void Arvi_Main(void)
 	if(checkVariantTime < GetMilliSec())
 	{
 		checkVariant();
-		checkVariantTime = GetMilliSec() +1000;
+		checkVariantTime = GetMilliSec() +1500;
 	}
 }
 

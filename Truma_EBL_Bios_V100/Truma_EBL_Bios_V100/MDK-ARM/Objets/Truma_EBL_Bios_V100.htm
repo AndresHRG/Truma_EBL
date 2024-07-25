@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objets\Truma_EBL_Bios_V100.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objets\Truma_EBL_Bios_V100.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Thu Jul 25 16:30:26 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Thu Jul 25 16:45:29 2024
 <BR><P>
 <H3>Maximum Stack Usage =       1044 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1048,7 +1048,7 @@ Global Symbols
 <LI><a href="#[1b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Utils::ioDigitalWrite(IOParameters const&, short)
 </UL>
 
-<P><STRONG><a name="[113]"></a>Arvi_Main</STRONG> (Thumb, 150 bytes, Stack size 24 bytes, arvi-main.o(.text.Arvi_Main))
+<P><STRONG><a name="[113]"></a>Arvi_Main</STRONG> (Thumb, 152 bytes, Stack size 24 bytes, arvi-main.o(.text.Arvi_Main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 244<LI>Call Chain = Arvi_Main &rArr; Lin::updateInfoFrames() &rArr; CommunicationManager::getTopicState(unsigned char) &rArr; bool std::__2::operator!=[abi:v16000]&lang;Devices**&rang;(std::__2::__wrap_iter&lang;Devices**&rang; const&, std::__2::__wrap_iter&lang;Devices**&rang; const&) &rArr; bool std::__2::operator==[abi:v16000]&lang;Devices**&rang;(std::__2::__wrap_iter&lang;Devices**&rang; const&, std::__2::__wrap_iter&lang;Devices**&rang; const&) &rArr; std::__2::__wrap_iter&lang;Devices**&rang;::base[abi:v16000]() const
 </UL>
 <BR>[Calls]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lin::updateInfoFrames()
@@ -1234,8 +1234,8 @@ Global Symbols
 <P><STRONG><a name="[148]"></a>HAL_DAC_ConfigChannel</STRONG> (Thumb, 906 bytes, Stack size 48 bytes, stm32g4xx_hal_dac.o(.text.HAL_DAC_ConfigChannel))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = HAL_DAC_ConfigChannel
 </UL>
-<BR>[Calls]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-<LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetHCLKFreq
+<BR>[Calls]<UL><LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetHCLKFreq
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
 <BR>[Called By]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_DAC1_Init
 </UL>
@@ -4123,12 +4123,12 @@ Global Symbols
 <P><STRONG><a name="[261]"></a>std::__2::pair&lang;std::__2::reverse_iterator&lang;errors*&rang;, std::__2::reverse_iterator&lang;errors*&rang;&rang; std::__2::__move_impl[abi:v16000]&lang;std::__2::_ClassicAlgPolicy, errors*, errors*, 0&rang;(std::__2::reverse_iterator&lang;errors*&rang;, std::__2::reverse_iterator&lang;errors*&rang;, std::__2::reverse_iterator&lang;errors*&rang;)</STRONG> (Thumb, 132 bytes, Stack size 80 bytes, errormanager.o(.text._ZNSt3__211__move_implB6v16000INS_17_ClassicAlgPolicyEP6errorsS3_Li0EEENS_4pairINS_16reverse_iteratorIT0_EENS5_IT1_EEEES7_S7_S9_))
 <BR><BR>[Stack]<UL><LI>Max Depth = 148<LI>Call Chain = std::__2::pair&lang;std::__2::reverse_iterator&lang;errors*&rang;, std::__2::reverse_iterator&lang;errors*&rang;&rang; std::__2::__move_impl[abi:v16000]&lang;std::__2::_ClassicAlgPolicy, errors*, errors*, 0&rang;(std::__2::reverse_iterator&lang;errors*&rang;, std::__2::reverse_iterator&lang;errors*&rang;, std::__2::reverse_iterator&lang;errors*&rang;) &rArr; std::__2::pair&lang;errors*, errors*&rang; std::__2::__move_impl[abi:v16000]&lang;std::__2::_ClassicAlgPolicy, errors, errors, void&rang;(errors*, errors*, errors*) &rArr; std::__2::pair&lang;std::__2::__unwrap_ref_decay&lang;errors*&rang;::type, std::__2::__unwrap_ref_decay&lang;errors*&rang;::type&rang; std::__2::make_pair[abi:v16000]&lang;errors*, errors*&rang;(errors*&&, errors*&&) &rArr; std::__2::pair&lang;errors*, errors*&rang;::pair__sub_object[abi:v16000]&lang;errors*, errors*, (void*)0&rang;(errors*&&, errors*&&)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[263]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;decltype(std::__2::__unwrap_iter_impl&lang;errors*, true&rang;::__unwrap(std::declval&lang;errors*&rang;())) std::__2::__unwrap_iter[abi:v16000]&lang;errors*, std::__2::__unwrap_iter_impl&lang;errors*, true&rang;, 0&rang;(errors*)
+<BR>[Calls]<UL><LI><a href="#[259]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;std::__2::pair&lang;errors*, errors*&rang; std::__2::__move_impl[abi:v16000]&lang;std::__2::_ClassicAlgPolicy, errors, errors, void&rang;(errors*, errors*, errors*)
+<LI><a href="#[263]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;decltype(std::__2::__unwrap_iter_impl&lang;errors*, true&rang;::__unwrap(std::declval&lang;errors*&rang;())) std::__2::__unwrap_iter[abi:v16000]&lang;errors*, std::__2::__unwrap_iter_impl&lang;errors*, true&rang;, 0&rang;(errors*)
 <LI><a href="#[262]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;std::__2::reverse_iterator&lang;errors*&rang;::base[abi:v16000]() const
 <LI><a href="#[265]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;std::__2::reverse_iterator&lang;errors*&rang;::reverse_iterator__sub_object[abi:v16000](errors*)
 <LI><a href="#[266]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;std::__2::pair&lang;std::__2::__unwrap_ref_decay&lang;std::__2::reverse_iterator&lang;errors*&rang;&&rang;::type, std::__2::__unwrap_ref_decay&lang;std::__2::reverse_iterator&lang;errors*&rang;&rang;::type&rang; std::__2::make_pair[abi:v16000]&lang;std::__2::reverse_iterator&lang;errors*&rang;&, std::__2::reverse_iterator&lang;errors*&rang;&rang;(std::__2::reverse_iterator&lang;errors*&rang;&, std::__2::reverse_iterator&lang;errors*&rang;&&)
 <LI><a href="#[264]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;errors* std::__2::__rewrap_iter[abi:v16000]&lang;errors*, errors*, std::__2::__unwrap_iter_impl&lang;errors*, true&rang;&rang;(errors*, errors*)
-<LI><a href="#[259]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;std::__2::pair&lang;errors*, errors*&rang; std::__2::__move_impl[abi:v16000]&lang;std::__2::_ClassicAlgPolicy, errors, errors, void&rang;(errors*, errors*, errors*)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[359]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;std::__2::enable_if&lang;is_copy_constructible&lang;std::__2::reverse_iterator&lang;errors*&rang;&rang;::value && is_copy_constructible&lang;std::__2::reverse_iterator&lang;errors*&rang;&rang;::value && is_copy_constructible&lang;std::__2::reverse_iterator&lang;errors*&rang;&rang;::value, std::__2::pair&lang;std::__2::reverse_iterator&lang;errors*&rang;, std::__2::reverse_iterator&lang;errors*&rang;&rang;&rang;::type std::__2::__move[abi:v16000]&lang;std::__2::_ClassicAlgPolicy, std::__2::reverse_iterator&lang;errors*&rang;, std::__2::reverse_iterator&lang;errors*&rang;, std::__2::reverse_iterator&lang;errors*&rang;&rang;(std::__2::reverse_iterator&lang;errors*&rang;, std::__2::reverse_iterator&lang;errors*&rang;, std::__2::reverse_iterator&lang;errors*&rang;)
 </UL>
@@ -6255,10 +6255,10 @@ Global Symbols
 <P><STRONG><a name="[35f]"></a>std::__2::enable_if&lang;is_copy_constructible&lang;errors*&rang;::value && is_copy_constructible&lang;errors*&rang;::value && is_copy_constructible&lang;errors*&rang;::value, std::__2::pair&lang;errors*, errors*&rang;&rang;::type std::__2::__move[abi:v16000]&lang;std::__2::_ClassicAlgPolicy, errors*, errors*, errors*&rang;(errors*, errors*, errors*)</STRONG> (Thumb, 82 bytes, Stack size 48 bytes, errormanager.o(.text._ZNSt3__26__moveB6v16000INS_17_ClassicAlgPolicyEP6errorsS3_S3_EENS_9enable_ifIXaaaasr21is_copy_constructibleIT0_EE5valuesr21is_copy_constructibleIT1_EE5valuesr21is_copy_constructibleIT2_EE5valueENS_4pairIS5_S7_EEE4typeES5_S6_S7_))
 <BR><BR>[Stack]<UL><LI>Max Depth = 116<LI>Call Chain = std::__2::enable_if&lang;is_copy_constructible&lang;errors*&rang;::value && is_copy_constructible&lang;errors*&rang;::value && is_copy_constructible&lang;errors*&rang;::value, std::__2::pair&lang;errors*, errors*&rang;&rang;::type std::__2::__move[abi:v16000]&lang;std::__2::_ClassicAlgPolicy, errors*, errors*, errors*&rang;(errors*, errors*, errors*) &rArr; std::__2::pair&lang;errors*, errors*&rang; std::__2::__move_impl[abi:v16000]&lang;std::__2::_ClassicAlgPolicy, errors, errors, void&rang;(errors*, errors*, errors*) &rArr; std::__2::pair&lang;std::__2::__unwrap_ref_decay&lang;errors*&rang;::type, std::__2::__unwrap_ref_decay&lang;errors*&rang;::type&rang; std::__2::make_pair[abi:v16000]&lang;errors*, errors*&rang;(errors*&&, errors*&&) &rArr; std::__2::pair&lang;errors*, errors*&rang;::pair__sub_object[abi:v16000]&lang;errors*, errors*, (void*)0&rang;(errors*&&, errors*&&)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[263]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;decltype(std::__2::__unwrap_iter_impl&lang;errors*, true&rang;::__unwrap(std::declval&lang;errors*&rang;())) std::__2::__unwrap_iter[abi:v16000]&lang;errors*, std::__2::__unwrap_iter_impl&lang;errors*, true&rang;, 0&rang;(errors*)
+<BR>[Calls]<UL><LI><a href="#[259]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;std::__2::pair&lang;errors*, errors*&rang; std::__2::__move_impl[abi:v16000]&lang;std::__2::_ClassicAlgPolicy, errors, errors, void&rang;(errors*, errors*, errors*)
+<LI><a href="#[263]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;decltype(std::__2::__unwrap_iter_impl&lang;errors*, true&rang;::__unwrap(std::declval&lang;errors*&rang;())) std::__2::__unwrap_iter[abi:v16000]&lang;errors*, std::__2::__unwrap_iter_impl&lang;errors*, true&rang;, 0&rang;(errors*)
 <LI><a href="#[25b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;std::__2::pair&lang;std::__2::__unwrap_ref_decay&lang;errors*&rang;::type, std::__2::__unwrap_ref_decay&lang;errors*&rang;::type&rang; std::__2::make_pair[abi:v16000]&lang;errors*, errors*&rang;(errors*&&, errors*&&)
 <LI><a href="#[264]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;errors* std::__2::__rewrap_iter[abi:v16000]&lang;errors*, errors*, std::__2::__unwrap_iter_impl&lang;errors*, true&rang;&rang;(errors*, errors*)
-<LI><a href="#[259]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;std::__2::pair&lang;errors*, errors*&rang; std::__2::__move_impl[abi:v16000]&lang;std::__2::_ClassicAlgPolicy, errors, errors, void&rang;(errors*, errors*, errors*)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[35e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;errors* std::__2::move[abi:v16000]&lang;errors*, errors*&rang;(errors*, errors*, errors*)
 </UL>
@@ -7252,8 +7252,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;std::__2::pair&lang;errors*, errors*&rang;::pair__sub_object[abi:v16000]&lang;errors*, errors*, (void*)0&rang;(errors*&&, errors*&&)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[35f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;std::__2::enable_if&lang;is_copy_constructible&lang;errors*&rang;::value && is_copy_constructible&lang;errors*&rang;::value && is_copy_constructible&lang;errors*&rang;::value, std::__2::pair&lang;errors*, errors*&rang;&rang;::type std::__2::__move[abi:v16000]&lang;std::__2::_ClassicAlgPolicy, errors*, errors*, errors*&rang;(errors*, errors*, errors*)
-<LI><a href="#[259]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;std::__2::pair&lang;errors*, errors*&rang; std::__2::__move_impl[abi:v16000]&lang;std::__2::_ClassicAlgPolicy, errors, errors, void&rang;(errors*, errors*, errors*)
+<BR>[Called By]<UL><LI><a href="#[259]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;std::__2::pair&lang;errors*, errors*&rang; std::__2::__move_impl[abi:v16000]&lang;std::__2::_ClassicAlgPolicy, errors, errors, void&rang;(errors*, errors*, errors*)
+<LI><a href="#[35f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;std::__2::enable_if&lang;is_copy_constructible&lang;errors*&rang;::value && is_copy_constructible&lang;errors*&rang;::value && is_copy_constructible&lang;errors*&rang;::value, std::__2::pair&lang;errors*, errors*&rang;&rang;::type std::__2::__move[abi:v16000]&lang;std::__2::_ClassicAlgPolicy, errors*, errors*, errors*&rang;(errors*, errors*, errors*)
 </UL>
 
 <P><STRONG><a name="[25e]"></a>std::__2::pair&lang;std::__2::__unwrap_ref_decay&lang;LinClients**&rang;::type, std::__2::__unwrap_ref_decay&lang;LinClients**&rang;::type&rang; std::__2::make_pair[abi:v16000]&lang;LinClients**, LinClients**&rang;(LinClients**&&, LinClients**&&)</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, linmaster.o(.text._ZNSt3__29make_pairB6v16000IPP10LinClientsS3_EENS_4pairINS_18__unwrap_ref_decayIT_E4typeENS5_IT0_E4typeEEEOS6_OS9_))
