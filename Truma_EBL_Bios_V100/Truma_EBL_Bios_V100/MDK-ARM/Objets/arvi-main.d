@@ -10,4 +10,5 @@
   ..\Core\Inc\InternalLigths.h ..\Core\Inc\Inverter.h \
   ..\Core\Inc\Multimedia.h ..\Core\Inc\LeisureBattery1.h \
   ..\Core\Inc\Ligths_1.h ..\Core\Inc\SolarRegulator1.h \
-  ..\Core\Inc\WaterPump.h
+  ..\Core\Inc\WaterPump.h ..\Core\Inc\Utils.h ..\Core\Inc\AddressIO.h \
+  ..\Core\Inc\Comm.h

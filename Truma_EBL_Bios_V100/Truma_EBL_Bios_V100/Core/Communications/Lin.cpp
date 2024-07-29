@@ -352,10 +352,7 @@ void Lin::traslate2Topic(unsigned char* frame)
 
 void Lin::sendFrame(unsigned char* frame, short sizeBuffer)
 {
-	for(int i = 1; i < sizeBuffer; i++)
-	{
-		HAL_UART_Transmit(&huart1,(uint8_t*)&frame[i], 1, 1); // enviamos frame de info
-	}
+	Tx_UART1(frame+1, sizeBuffer);
 }
 
 void Lin::updateInfoFrames()

@@ -45,7 +45,7 @@ uint8_t Rx_UART1(uint8_t Data);
 
 enum eComponentNum
 {
-	BLK1_1 = 1,		//Entrada cargador
+	BLK1_1 = 1,	//Entrada cargador
 	BLK1_2,			//Entrada solar
 	BLK2_3,			//Salida
 	BLK3_1,			//Salida
@@ -60,7 +60,7 @@ enum eComponentNum
 	BLK3_10,		//Salida
 	BLK3_11,		//Salida
 	BLK3_12,		//Entrada para medición de batería de motor
-	BLK4,			//Salida D+
+	BLK4,			  //Salida D+
 	BLK5_1,			//Entrada luces
 	BLK5_2,			//Entrada luces
 	BLK5_3,			//Entrada luces
@@ -110,7 +110,7 @@ enum eComponentNum
 	LED,
 	LIN_BLK9_A,		//LIN2
 	LIN_BLK9_B,		//LIN1
-	BAT_M,			//voltaje de batería motor
+	BAT_M,			//voltaje de batería motor BLK3_12
 	BAT_2,			//voltaje en el borne de batería
 };	
 

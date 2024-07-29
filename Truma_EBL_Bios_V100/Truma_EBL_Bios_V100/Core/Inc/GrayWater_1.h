@@ -10,7 +10,7 @@ private:
     unsigned long long expirationTime;
 		unsigned long long powerTime;
     int state;
-		int levelGW;
+		float levelGW;
 		int counterGW;
 public:
     GrayWater1(short _idTopic);

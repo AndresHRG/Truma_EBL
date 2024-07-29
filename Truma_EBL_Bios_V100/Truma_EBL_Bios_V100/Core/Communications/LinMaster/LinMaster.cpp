@@ -148,14 +148,9 @@ void LinMaster::sendControlFrame(uint8_t* frame, uint8_t sizeBuffer)
     MX_USART3_UART_Init();
     HAL_LIN_SendBreak(&huart3);
     
-    HAL_UART_Transmit(&huart3, &byteSync, 1, 1); //enviamos byte de sincronizacion
-    HAL_UART_Transmit(&huart3,(uint8_t*)&frame[0], 1, 1);
-    
-    for(int i = 1; i < sizeBuffer; i++)
-    {
-        HAL_UART_Transmit(&huart3,(uint8_t*)&frame[i], 1, 1); // enviamos frame entero de control (incluye id y checksum)
-    }
-
+		Tx_UART3(&byteSync, 1);// enviamos byte de sincronizacion Lin
+		Tx_UART3(&frame[0], 1);//enviamos byte control que corresponda
+		Tx_UART3(frame+1, sizeBuffer); // enviamos data del control
 }
 
 void LinMaster::sendInfoFrame(uint8_t idInfo)
@@ -167,8 +162,6 @@ void LinMaster::sendInfoFrame(uint8_t idInfo)
 		memset(buffer,0,10);
 
 		HAL_LIN_SendBreak(&huart3);
-
-		HAL_UART_Transmit(&huart3, &byteSync, 1, 1); //enviamos byte de sincronizacion
-		HAL_UART_Transmit(&huart3, &idInfo, 1, 1); //inmediatamente esperamos respuesta del equipo
-	
+		Tx_UART3(&byteSync, 1);// enviamos byte de sincronizacion Lin
+		Tx_UART3(&idInfo, 1); // enviamos byte info que corresponda
 }

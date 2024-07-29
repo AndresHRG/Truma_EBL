@@ -10,7 +10,7 @@ private:
     unsigned long long expirationTime;
 		unsigned long long powerTime;
     int state;
-		int levelFW;
+		float levelFW;
 		int counterFW;
 public:
     FreshWater1(short _idTopic);

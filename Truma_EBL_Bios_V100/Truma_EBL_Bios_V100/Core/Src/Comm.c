@@ -24,15 +24,17 @@ void Arvi_printf(char *s,...)
 
     while(1)
     {
-        if(buff[i]) TxChar_UD(buff[i++]);
-        else break;
+        if(buff[i]) 
+					TxChar_UD(buff[i++]);
+        else 
+					break;
     }
     va_end(vl);
 }
 
 void Tx_UART1(uint8_t *Data, uint8_t Len)
 {
-    HAL_UART_Transmit(&huart1, Data, Len, 100);
+    HAL_UART_Transmit(&huart1, Data, Len, 1);
 }
 
 void Tx_UART2(uint8_t *Data, uint8_t Len)
@@ -42,7 +44,7 @@ void Tx_UART2(uint8_t *Data, uint8_t Len)
 
 void Tx_UART3(uint8_t *Data, uint8_t Len)
 {
-    HAL_UART_Transmit(&huart3, Data, Len, 100);
+    HAL_UART_Transmit(&huart3, Data, Len, 1);
 }
 
 void Write_IO_Expander(uint8_t output)

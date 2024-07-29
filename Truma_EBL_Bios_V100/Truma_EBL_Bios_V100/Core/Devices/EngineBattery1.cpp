@@ -27,7 +27,7 @@ void EngineBattery1::updateState()
 	expirationTime = GetMilliSec() + 1000;
 	
 	mAmps = 0xFFFE;// valor de corriente no disponible
-	volts = ArviGet_mV(/*BAT_M*/BAT_2)/100;
+	volts = ArviGet_mV(BAT_M)/100;
 }
 
 void EngineBattery1::topicReceived(uint8_t* topic)

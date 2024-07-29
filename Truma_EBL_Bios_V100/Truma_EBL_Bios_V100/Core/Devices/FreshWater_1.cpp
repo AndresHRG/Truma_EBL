@@ -10,6 +10,9 @@ FreshWater1::FreshWater1(short _idTopic): Devices(_idTopic)
 	levelFW = 0;
 	counterFW = 0;
 	powerTime = 0;
+	
+	if(variant)
+		setOn();
 }
 
 void FreshWater1::setOn()
@@ -27,22 +30,28 @@ void FreshWater1::updateState()
 	if(expirationTime > GetMilliSec())
 		return;
 	
-  if(powerTime < GetMilliSec())
+	expirationTime = GetMilliSec() + 510;
+	
+	if(variant)
+	{
+		levelFW = (float)ArviGet_AD(BLK7_A);
+		levelFW *= 0.14;
+	}
+	
+  if(!variant && (powerTime < GetMilliSec()))
 	{
 		setOff();
-	}
+	} 
 }
 
 void FreshWater1::topicReceived(uint8_t* topic)
 {
   if(topic[1] != 0)
 	{
-		levelFW =0;
-		
-		if(!variant)
+		if(variant)//tornillos
 		{
+			levelFW =0;
 			this->setOn();
-			expirationTime = GetMilliSec() + 5000;
 			powerTime = GetMilliSec() + 10000;
 			
 			if(Utils::ioDigitalRead(FWATER25) > 255)
@@ -56,13 +65,17 @@ void FreshWater1::topicReceived(uint8_t* topic)
 		}
 		else //sensor 0-180
 		{
-			//pendiente de implementacion
+			if(levelFW > 100.0)
+				levelFW = 100.0;
+			
+			if(levelFW <= 0.0)
+				levelFW = 0.0;
 		}
 
 		counterFW ++;//contador de preguntas de solicitud de nivel de agua
 		
 		if(counterFW > 1)
-			state = levelFW;
+			state = (int)levelFW;
 		
 		return;		
 	}

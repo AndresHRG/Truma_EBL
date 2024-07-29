@@ -7,9 +7,12 @@ GrayWater1::GrayWater1(short _idTopic): Devices(_idTopic)
 {
 	expirationTime = 0;
 	state = 0xFE;
-	levelGW = 0;
+	levelGW = 0.0;
 	counterGW = 0;
 	powerTime = 0;
+	
+	if(variant)
+		setOn();
 }
 
 void GrayWater1::setOn()
@@ -27,7 +30,15 @@ void GrayWater1::updateState()
 	if(expirationTime > GetMilliSec())
 		return;
 	
-  if(powerTime < GetMilliSec())
+	expirationTime = GetMilliSec() + 500;
+	
+	if(variant)
+	{
+		levelGW = (float)ArviGet_AD(BLK7_A);
+		levelGW *= 0.14;
+	}
+	
+  if(!variant && (powerTime < GetMilliSec()))
 	{
 		setOff();
 	} 
@@ -37,13 +48,10 @@ void GrayWater1::topicReceived(uint8_t* topic)
 {	
 	if(topic[1] != 0)
 	{
-		levelGW =0;
-		
-		if(!variant)
+		if(!variant)//tornillos
 		{
+			levelGW =0;
 			this->setOn();
-			expirationTime = GetMilliSec() + 5000;
-			
 			powerTime = GetMilliSec() + 10000;
 			
 			if(Utils::ioDigitalRead(GWATER25) > 255)
@@ -57,13 +65,17 @@ void GrayWater1::topicReceived(uint8_t* topic)
 		}
 		else //sensor 0-180
 		{
-			//pendiente de implementacion
+			if(levelGW > 100.0)
+				levelGW = 100.0;
+			
+			if(levelGW <= 0.0)
+				levelGW = 0.0;
 		}
 		
 		counterGW ++;//contador de preguntas de solicitud de nivel de agua
 			
 		if(counterGW > 1)
-			state = levelGW;
+			state = (int)levelGW;
 		
 		return;
 	}

@@ -12,6 +12,7 @@ extern "C" {
 #define	IO_EXPANDER_WRITE	0
 
 void Arvi_printf(char *s,...);
+void TxChar_UD(uint8_t p_data);
 void Write_IO_Expander(uint8_t output);
 uint8_t Read_IO_Expander(void);
 

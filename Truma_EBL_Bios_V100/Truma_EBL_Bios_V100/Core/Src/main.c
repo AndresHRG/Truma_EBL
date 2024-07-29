@@ -98,6 +98,7 @@ void Bios_Init(void)
 	OnBLK1_2
 	Enable_LIN1	
 	Enable_LIN2
+	Arvi_printf("Truma-EBL-Bios-V1.0.0\n");
 }
 
 int main (void)
@@ -107,13 +108,11 @@ int main (void)
 	Bios_Init();
 	
 	int sysclk_freq = HAL_RCC_GetSysClockFreq();
-	
+
 	Arvi_Setup();
 	
 	while(1)
 	{
-		Arvi_Main();
-		
 		if(Timer1ms >= 5)
 		{
 			ScanMultiplexores();
@@ -126,6 +125,8 @@ int main (void)
 			else OnLED
 			Timer20ms = 0;
 		}
+		//ScanMultiplexores();
+		Arvi_Main();
 	}
 }
 

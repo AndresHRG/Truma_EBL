@@ -25,6 +25,8 @@
 #include "Ligths_1.h"
 #include "SolarRegulator1.h"
 #include "WaterPump.h"
+#include "Utils.h"
+#include "Comm.h"
 
 //COMMUNICATIONS
 Lin* linInstance;
@@ -188,8 +190,17 @@ void initTopics()
 	}
 }
 
+void checkVariant()
+{
+	variant = false;
+	
+	if(ArviGet_AD(BLK10_2) >  255)// usamos de forma provisional esta entrada para cambio de variante.
+		variant = true;
+}
+
 void Arvi_Setup(void)
 {
+	checkVariant();
 	initCommunications();
 	initTopics();
 }
@@ -200,14 +211,6 @@ void devicesState()
 	{
 		device->updateState();
 	}
-}
-
-void checkVariant()
-{
-	variant = false;
-	
-	if(ArviGet_AD(BLK10_2) >  255)// usamos de forma provisional esta entrada para cambio de variante.
-		variant = true;
 }
 
 void Arvi_Main(void)
