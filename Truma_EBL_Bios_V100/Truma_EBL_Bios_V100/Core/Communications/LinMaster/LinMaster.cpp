@@ -53,16 +53,6 @@ uint8_t LinMaster::getSizeInfoFrame(uint8_t idInfo)
 	
 	return result;
 }
-	
-void LinMaster::scanBus()
-{
-	uint8_t readByte;
-	
-	if(HAL_UART_Receive(&huart3, &readByte, 1, 1) == HAL_OK)
-	{
-			composeMsgLin(readByte);	
-  }
-}
 
 void LinMaster::composeMsgLin (uint8_t byte)
 {

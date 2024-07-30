@@ -30,7 +30,6 @@ public:
     
     void addClient(LinClients* client);
 		uint8_t getSizeInfoFrame(uint8_t idInfo);
-    void scanBus();
     void composeMsgLin (uint8_t byte);
 		void processInfoFrame(uint8_t* frame);
     uint8_t calculateCheckSum(uint8_t* data, short length);
