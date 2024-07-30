@@ -26,7 +26,7 @@ void Fuses::updateState()
 	if(expirationTime > GetMilliSec())
 		return;
 	
-	expirationTime = GetMilliSec() + 100;
+	expirationTime = GetMilliSec() + 80;
 	
 	//atendemos un fusible a la vez para ir mas rapido a otros procesos
 	switch(i)
@@ -152,6 +152,16 @@ void Fuses::updateState()
 				Errors::cleanError(6,14);
 			break;
 		}
+		case 12:
+		{
+			byte fuse1 = ArviGet(FUSE1);
+			
+			if(fuse1 == FUSE_OK)
+				Errors::addError(6,1);
+			else if(Errors::errorExists(6,1))
+				Errors::cleanError(6,1);
+			break;
+		}
 		default:
 		{
 			break;
@@ -159,7 +169,7 @@ void Fuses::updateState()
 	}
 	i++;
 	
-	if(i > 11)
+	if(i > 12)
 		i = 0;
 }
 

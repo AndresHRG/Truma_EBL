@@ -98,7 +98,6 @@ void Bios_Init(void)
 	OnBLK1_2
 	Enable_LIN1	
 	Enable_LIN2
-	//Arvi_printf("Truma-EBL-Bios-V1.0.0\n");
 }
 
 int main (void)

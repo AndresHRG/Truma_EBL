@@ -25,7 +25,7 @@ void InternalLigths::setOn()
 	Utils::ioDigitalWrite(LIGHT3, 1);
 	Utils::ioDigitalWrite(LIGHT4, 1);
 	Utils::ioDigitalWrite(LIGHT5, 1);
-	Utils::ioDigitalWrite(LIGHT5, 1);
+	Utils::ioDigitalWrite(LIGHT6, 1);
 }
 
 void InternalLigths::setOff()

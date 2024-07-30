@@ -11,10 +11,16 @@ FloorHeating::FloorHeating(short _idTopic): Devices(_idTopic)
 
 void FloorHeating::setOn()
 {
+	Utils::ioDigitalWrite(FLOOR_HEATING_1, 1);
+	Utils::ioDigitalWrite(FLOOR_HEATING_2, 1);
+	Utils::ioDigitalWrite(FLOOR_HEATING_3, 1);
 }
 
 void FloorHeating::setOff()
 {
+	Utils::ioDigitalWrite(FLOOR_HEATING_1, 0);
+	Utils::ioDigitalWrite(FLOOR_HEATING_2, 0);
+	Utils::ioDigitalWrite(FLOOR_HEATING_3, 0);
 }
 
 void FloorHeating::updateState()

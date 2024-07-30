@@ -12,7 +12,9 @@ GrayWater1::GrayWater1(short _idTopic): Devices(_idTopic)
 	powerTime = 0;
 	
 	if(variant)
+	{
 		setOn();
+	}
 }
 
 void GrayWater1::setOn()
@@ -34,6 +36,7 @@ void GrayWater1::updateState()
 	
 	if(variant)
 	{
+		this->setOn();
 		levelGW = (float)ArviGet_AD(BLK7_A);
 		levelGW *= 0.14;
 	}

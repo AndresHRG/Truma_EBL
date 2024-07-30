@@ -12,7 +12,9 @@ FreshWater1::FreshWater1(short _idTopic): Devices(_idTopic)
 	powerTime = 0;
 	
 	if(variant)
+	{
 		setOn();
+	}
 }
 
 void FreshWater1::setOn()
@@ -34,7 +36,8 @@ void FreshWater1::updateState()
 	
 	if(variant)
 	{
-		levelFW = (float)ArviGet_AD(BLK7_A);
+		this->setOn();
+		levelFW = (float)ArviGet_AD(BLK6_A);
 		levelFW *= 0.14;
 	}
 	
@@ -48,7 +51,7 @@ void FreshWater1::topicReceived(uint8_t* topic)
 {
   if(topic[1] != 0)
 	{
-		if(variant)//tornillos
+		if(!variant)//tornillos
 		{
 			levelFW =0;
 			this->setOn();
