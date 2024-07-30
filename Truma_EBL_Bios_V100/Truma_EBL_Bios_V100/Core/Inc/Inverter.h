@@ -3,11 +3,9 @@
 
 #include "Devices.h"
 #include "SystemDevices.h"
+#include "LinClients.h"
 
-#define ID_CONTROL 0x1C
-#define ID_INFO    0x1D
-
-class Inverter : public Devices, public SystemDevices
+class Inverter : public Devices, public SystemDevices, public LinClients
 {
 private:
     unsigned long long expirationTime;
@@ -15,7 +13,7 @@ private:
 		int noResponse;
 		bool stateChange;
 		bool aviableLin;
-		unsigned char inverter[10];
+		uint8_t inverter[10];
 public:
     Inverter(short _idTopic);
 

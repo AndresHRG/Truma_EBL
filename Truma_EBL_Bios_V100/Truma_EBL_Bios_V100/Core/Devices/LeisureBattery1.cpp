@@ -7,7 +7,8 @@
 
 extern LinMaster* linMasterInstance;
 
-#define FRAME1 0x22
+#define R_SUPER_VOLT 0x22 // SUPERVOLT
+#define R_LEAB 0x26       // LEAB
 
 LeisureBattery1::LeisureBattery1(short _idTopic): Devices(_idTopic), LinClients()
 {
@@ -17,7 +18,16 @@ LeisureBattery1::LeisureBattery1(short _idTopic): Devices(_idTopic), LinClients(
 		timeRemaining = 0;
 		soc = 0;
 		volts = 0;
-		this->setIdInfo(linMasterInstance->idCalc(FRAME1));
+		
+		if(!variant3)
+		{
+			this->setIdInfo(linMasterInstance->idCalc(R_SUPER_VOLT));
+		}
+		else
+		{
+			this->setIdInfo(linMasterInstance->idCalc(R_LEAB));
+		}
+		
 }
 
 void LeisureBattery1::setOn()
@@ -37,7 +47,15 @@ void LeisureBattery1::updateState()
 	
 	if(!variant)
 	{
-		linMasterInstance->sendInfoFrame(linMasterInstance->idCalc(FRAME1));
+		if(!variant3)
+		{
+			linMasterInstance->sendInfoFrame(linMasterInstance->idCalc(R_SUPER_VOLT)); 
+		}
+		else
+		{
+			linMasterInstance->sendInfoFrame(linMasterInstance->idCalc(R_LEAB));
+		}
+		
 	}
 	else
 	{
@@ -62,15 +80,25 @@ int LeisureBattery1::getTopicState()
 
 void LeisureBattery1::processInfoFrame(uint8_t* frame)
 {
-	//estos calculos corresponden a una bateria SuperVolt
-	
-	volts = frame[0] +(frame[1] << 8);
-	volts /= 10;
-	
-	mAmps = frame[2] +(frame[2] << 8);
-	mAmps/= 10;
-	
-	soc = frame[5] * 2;
+	if(!variant) // procesamiento de datos para superVolt
+	{
+		volts = frame[0] +(frame[1] << 8);
+		volts /= 10;
+		
+		mAmps = frame[2] +(frame[3] << 8);
+		mAmps/= 10;
+		
+		soc = frame[5] * 2;
+	}
+	else// procesamiento de datos para Leab
+	{
+		volts = ArviGet_mV(BAT_2)/100;
+		
+		soc = frame[0];
+		
+		mAmps = frame[1] +(frame[2] << 8);
+		mAmps/= 10;
+	}
 	
 	if(soc/2 <= 10)
 		Errors::addError(4,71);

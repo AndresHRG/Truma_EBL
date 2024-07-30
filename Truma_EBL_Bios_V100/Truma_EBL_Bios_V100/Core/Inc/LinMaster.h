@@ -15,6 +15,7 @@
 #include <stdint.h>
 #include <vector>
 
+#define SIZE_BUFFER 10
 
 class LinMaster
 {

@@ -3,8 +3,9 @@
 
 #include "Devices.h"
 #include "SystemDevices.h"
+#include "LinClients.h"
 
-class SolarRegulator1 : public Devices, public SystemDevices
+class SolarRegulator1 : public Devices, public SystemDevices, public LinClients
 {
 private:
     unsigned long long expirationTime;
@@ -20,6 +21,7 @@ public:
     void updateState();
     void topicReceived(uint8_t* topic);
     int getTopicState();
+		void processInfoFrame(uint8_t* frame);
 };
 
 #endif

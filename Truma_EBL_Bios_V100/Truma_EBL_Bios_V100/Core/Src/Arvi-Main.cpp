@@ -39,6 +39,7 @@ EngineBattery1* eBatteryIntance;
 unsigned long long updateTimeInfoFrames = 0;
 unsigned long long checkVariantTime = 0;
 bool variant;
+bool variant3;
 
 std::vector<SystemDevices*> devices;
 
@@ -122,6 +123,7 @@ void initTopics()
 	{
 		devices.push_back(inverter);
 		linInstance->addClients(inverter);
+		linMasterInstance->addClient(inverter);
 	}
 	/***************************************/
 	
@@ -178,6 +180,7 @@ void initTopics()
 	{
 		devices.push_back(solar);
 		linInstance->addClients(solar);
+		linMasterInstance->addClient(solar);
 	}	
 	
 	/***************************************/
@@ -193,9 +196,13 @@ void initTopics()
 void checkVariant()
 {
 	variant = false;
+	variant3 = false;
 	
 	if(ArviGet_AD(BLK10_2) >  255)// usamos de forma provisional esta entrada para cambio de variante.
 		variant = true;
+	
+	if(ArviGet_AD(BLK10_3) >  255)// usamos de forma provisional esta entrada para cambio de variante.
+		variant3 = true;
 }
 
 void Arvi_Setup(void)

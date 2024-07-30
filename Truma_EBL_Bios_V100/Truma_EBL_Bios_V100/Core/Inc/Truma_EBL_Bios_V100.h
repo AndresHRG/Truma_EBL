@@ -118,6 +118,7 @@ void Arvi_Setup(void);
 void Arvi_Main(void);
 
 extern bool variant;
+extern bool variant3;
 
 
 #ifdef __cplusplus
