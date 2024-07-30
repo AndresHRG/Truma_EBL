@@ -15,6 +15,7 @@ SolarRegulator1::SolarRegulator1(short _idTopic): Devices(_idTopic), LinClients(
 		if(variant3)
 		{
 			this->setIdInfo(linMasterInstance->idCalc(R_LEAB));
+			this->setSizeInfoFrame(8);
 		}
 }
 

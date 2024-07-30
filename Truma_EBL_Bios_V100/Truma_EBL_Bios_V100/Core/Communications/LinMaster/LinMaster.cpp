@@ -39,6 +39,21 @@ void LinMaster::addClient(LinClients* client)
     clients.push_back(client);
 }
 
+uint8_t LinMaster::getSizeInfoFrame(uint8_t idInfo)
+{
+	uint8_t result = 9;
+	
+	for(const auto &client : clients)
+	{
+		if(client->verifyIdInfo(idInfo))
+		{
+			result = client->getSizeInfoFrame();
+		}
+	}
+	
+	return result;
+}
+	
 void LinMaster::scanBus()
 {
 	uint8_t readByte;
@@ -69,6 +84,7 @@ void LinMaster::composeMsgLin (uint8_t byte)
 	  case messageId:
 		{
 			linBuffer[0] = byte;
+			maxReceiveSize = getSizeInfoFrame(byte);
 			linstate = payLoad;
 		  break;
 		}

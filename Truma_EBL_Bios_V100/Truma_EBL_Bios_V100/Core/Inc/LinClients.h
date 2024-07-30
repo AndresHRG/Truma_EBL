@@ -18,7 +18,7 @@ class LinClients
 private:
     short _idControl;
     std::vector<uint8_t> idsInfo;
-
+		short sizeInfoFrame;
 public:
     LinClients();
     
@@ -28,6 +28,8 @@ public:
     short getIdControl();
     bool verifyIdInfo(uint8_t idInfo);
 		virtual void processInfoFrame(uint8_t* frame);
+		void setSizeInfoFrame(short size);
+		short getSizeInfoFrame();
 
 };
 

@@ -22,10 +22,12 @@ LeisureBattery1::LeisureBattery1(short _idTopic): Devices(_idTopic), LinClients(
 		if(!variant3)
 		{
 			this->setIdInfo(linMasterInstance->idCalc(R_SUPER_VOLT));
+			this->setSizeInfoFrame(8);
 		}
 		else
 		{
 			this->setIdInfo(linMasterInstance->idCalc(R_LEAB));
+			this->setSizeInfoFrame(7);
 		}
 		
 }
@@ -80,7 +82,7 @@ int LeisureBattery1::getTopicState()
 
 void LeisureBattery1::processInfoFrame(uint8_t* frame)
 {
-	if(!variant) // procesamiento de datos para superVolt
+	if(!variant3) // procesamiento de datos para superVolt
 	{
 		volts = frame[0] +(frame[1] << 8);
 		volts /= 10;
@@ -96,7 +98,8 @@ void LeisureBattery1::processInfoFrame(uint8_t* frame)
 		
 		soc = frame[0];
 		
-		mAmps = frame[1] +(frame[2] << 8);
+		mAmps = (frame[1] +(frame[2] << 8));
+		mAmps -= 32767;
 		mAmps/= 10;
 	}
 	

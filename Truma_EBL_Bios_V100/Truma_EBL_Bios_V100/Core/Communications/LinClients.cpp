@@ -4,6 +4,7 @@ LinClients::LinClients()
 {
     _idControl = 0;
     idsInfo.push_back(0);
+		sizeInfoFrame = 8;
 }
     
 void LinClients::setIdControl(uint8_t idControl)
@@ -37,4 +38,14 @@ bool LinClients::verifyIdInfo(uint8_t idInfo)
 void LinClients::processInfoFrame(uint8_t* frame)
 {
 	//de momento dejamos sin implementacion.
+}
+
+void LinClients::setSizeInfoFrame(short size)
+{
+	sizeInfoFrame  = size;
+}
+
+short LinClients::getSizeInfoFrame()
+{
+	return sizeInfoFrame;
 }
