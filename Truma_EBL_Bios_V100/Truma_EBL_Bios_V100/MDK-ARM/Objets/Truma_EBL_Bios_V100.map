@@ -6492,7 +6492,7 @@ Image component sizes
        106          0         48          0          0      21201   ligths_1.o
       2000          4          0         32          1      29320   lin.o
        272          0         12          0          0      56251   linclients.o
-       758          4          0          0          3      65048   linmaster.o
+       758          4          0          0          3      65037   linmaster.o
        286          0          0          0         17       3423   main.o
        172          0         64          0          0       3836   multimedia.o
        396          0         56          0          0      23174   solarregulator1.o
@@ -6518,7 +6518,7 @@ Image component sizes
        132          0         48          0          0       6017   waterpump.o
 
     ----------------------------------------------------------------------
-     34840        634       1512         52       9560     894703   Object Totals
+     34840        634       1512         52       9560     894692   Object Totals
          0          0         32          0          0          0   (incl. Generated)
        330          4          0          8         24          0   (incl. Padding)
 
@@ -6610,8 +6610,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     37544        810       1512         52       9660     895811   Grand Totals
-     37544        810       1512         52       9660     895811   ELF Image Totals
+     37544        810       1512         52       9660     895800   Grand Totals
+     37544        810       1512         52       9660     895800   ELF Image Totals
      37544        810       1512         52          0          0   ROM Totals
 
 ==============================================================================

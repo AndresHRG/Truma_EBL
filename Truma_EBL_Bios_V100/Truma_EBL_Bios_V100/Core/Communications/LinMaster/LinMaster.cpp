@@ -84,7 +84,7 @@ void LinMaster::composeMsgLin (uint8_t byte)
 		  linBuffer[pReceive] = byte;
 		  pReceive++;
 			
-		  if (pReceive >= maxReceiveSize) 
+		  if (pReceive > maxReceiveSize) 
 			{
 				linstate = crcLoad;
 				pReceive = 1;
