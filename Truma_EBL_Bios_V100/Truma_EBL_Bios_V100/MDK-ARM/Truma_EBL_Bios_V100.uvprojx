@@ -1096,11 +1096,6 @@
           <GroupName>Communications</GroupName>
           <Files>
             <File>
-              <FileName>CanAttender.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\Core\Communications\CanAttender.cpp</FilePath>
-            </File>
-            <File>
               <FileName>ComunicationManager.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\Core\Communications\ComunicationManager.cpp</FilePath>

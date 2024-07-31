@@ -36,8 +36,8 @@ LinMaster* linMasterInstance;
 LeisureBattery1* batteryInstance;
 EngineBattery1* eBatteryIntance;
 
-unsigned long long updateTimeInfoFrames = 0;
-unsigned long long checkVariantTime = 0;
+uint64_t updateTimeInfoFrames = 0;
+uint64_t  checkVariantTime = 0;
 bool variant;
 bool variant3;
 

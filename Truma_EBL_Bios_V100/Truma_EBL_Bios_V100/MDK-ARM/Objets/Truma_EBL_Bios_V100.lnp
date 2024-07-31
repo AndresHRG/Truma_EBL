@@ -34,7 +34,6 @@
 ".\objets\stm32g4xx_hal_uart.o"
 ".\objets\stm32g4xx_hal_uart_ex.o"
 ".\objets\system_stm32g4xx.o"
-".\objets\canattender.o"
 ".\objets\comunicationmanager.o"
 ".\objets\lin.o"
 ".\objets\linmaster.o"
