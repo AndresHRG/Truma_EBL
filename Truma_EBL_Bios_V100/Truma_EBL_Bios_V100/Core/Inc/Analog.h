@@ -4,7 +4,9 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
+	
+#include <stdint.h>
+	
 extern uint16_t convAD1[];
 extern uint16_t convAD2[];
 extern uint16_t Conversion_MUX_LIGHT[];

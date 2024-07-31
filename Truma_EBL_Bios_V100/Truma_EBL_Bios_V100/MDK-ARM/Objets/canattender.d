@@ -33,4 +33,5 @@
   ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_uart.h \
   ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_uart_ex.h \
   ..\Core\Inc\Utils.h ..\Core\Inc\AddressIO.h \
-  ..\Core\Inc\Truma_EBL_Bios_V100.h ..\Core\Inc\ErrorManager.h
+  ..\Core\Inc\Truma_EBL_Bios_V100.h ..\Core\Inc\Analog.h \
+  ..\Core\Inc\ErrorManager.h

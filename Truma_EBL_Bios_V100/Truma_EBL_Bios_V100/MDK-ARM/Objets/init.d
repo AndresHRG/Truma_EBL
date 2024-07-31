@@ -31,4 +31,4 @@
   ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_uart.h \
   ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_uart_ex.h \
   ..\Core\Inc\Init.h ..\Core\Inc\Comm.h \
-  ..\Core\Inc\Truma_EBL_Bios_V100.h
+  ..\Core\Inc\Truma_EBL_Bios_V100.h ..\Core\Inc\Analog.h

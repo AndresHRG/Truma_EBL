@@ -18,7 +18,9 @@ LeisureBattery1::LeisureBattery1(short _idTopic): Devices(_idTopic), LinClients(
 		timeRemaining = 0;
 		soc = 0;
 		volts = 0;
-		
+	
+		checkVariant();
+	
 		if(!variant3)
 		{
 			this->setIdInfo(linMasterInstance->idCalc(R_SUPER_VOLT));
@@ -61,8 +63,10 @@ void LeisureBattery1::updateState()
 	}
 	else
 	{
+		
 		mAmps = ArviGet_mA(DRV)/10;
 		volts = ArviGet_mV(BAT_2)/100;
+		soc = -1;
 		
 		if(ArviGet_mV(BAT_2) <= 10500)
 			Errors::addError(4,71);

@@ -7,6 +7,7 @@ extern "C" {
 
 #include <stdint.h>
 #include <stdbool.h>
+#include "Analog.h"
 
 uint64_t GetMilliSec(void);				//Devuelve los milisegundos transcurridos desde el inicio (64 bits)
 
@@ -119,6 +120,7 @@ void Arvi_Main(void);
 
 extern bool variant;
 extern bool variant3;
+extern void checkVariant();
 
 
 #ifdef __cplusplus

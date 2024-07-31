@@ -1,8 +1,9 @@
 ./objets/lin.o: ..\Core\Communications\Lin.cpp ..\Core\Inc\Lin.h \
   ..\Core\Inc\CommunicationManager.h ..\Core\Inc\Devices.h \
   ..\Core\Inc\Enums.h ..\Core\Inc\Truma_EBL_Bios_V100.h \
-  ..\Core\Inc\Utils.h ..\Core\Inc\AddressIO.h ..\Core\Inc\Init.h \
-  ..\Core\Inc\main.h ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal.h \
+  ..\Core\Inc\Analog.h ..\Core\Inc\Utils.h ..\Core\Inc\AddressIO.h \
+  ..\Core\Inc\Init.h ..\Core\Inc\main.h \
+  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal.h \
   ..\Core\Inc\stm32g4xx_hal_conf.h \
   ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_rcc.h \
   ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_def.h \

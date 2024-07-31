@@ -1,8 +1,8 @@
 ./objets/linmaster.o: ..\Core\Communications\LinMaster\LinMaster.cpp \
   ..\Core\Inc\LinMaster.h ..\Core\Inc\LinClients.h \
-  ..\Core\Inc\Truma_EBL_Bios_V100.h ..\Core\Inc\Utils.h \
-  ..\Core\Inc\AddressIO.h ..\Core\Inc\Init.h ..\Core\Inc\main.h \
-  ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal.h \
+  ..\Core\Inc\Truma_EBL_Bios_V100.h ..\Core\Inc\Analog.h \
+  ..\Core\Inc\Utils.h ..\Core\Inc\AddressIO.h ..\Core\Inc\Init.h \
+  ..\Core\Inc\main.h ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal.h \
   ..\Core\Inc\stm32g4xx_hal_conf.h \
   ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_rcc.h \
   ..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_def.h \

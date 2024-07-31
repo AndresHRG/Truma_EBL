@@ -198,17 +198,22 @@ void checkVariant()
 	variant = false;
 	variant3 = false;
 	
-	if(ArviGet_AD(BLK10_2) >  255)// usamos de forma provisional esta entrada para cambio de variante.
+	ScanMultiplexores();
+	
+	if(ArviGet_AD(BLK5_6) >  255)// usamos de forma provisional esta entrada para cambio de variante 1-2.
 		variant = true;
 	
-	if(ArviGet_AD(BLK10_3) >  255)// usamos de forma provisional esta entrada para cambio de variante.
+	if(ArviGet_AD(BLK5_5) >  255)// usamos de forma provisional esta entrada para cambio de variante 3.
+	{
 		variant3 = true;
+		variant = false;
+	}
 }
 
 void Arvi_Setup(void)
 {
-	checkVariant();
 	initCommunications();
+	checkVariant();
 	initTopics();
 }
 

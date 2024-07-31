@@ -86,15 +86,15 @@ void LinMaster::composeMsgLin (uint8_t byte)
 			
 		  if (pReceive >= maxReceiveSize) 
 			{
-				pReceive = 1;
 				linstate = crcLoad;
+				pReceive = 1;
 			}
 			break;
 		}
 	  case crcLoad:
 		{
-			linstate = linHeader;	
 			processInfoFrame(linBuffer);
+			linstate = linHeader;	
 			break;
 		}
 		default:

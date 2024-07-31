@@ -107,7 +107,7 @@ int main (void)
 	Bios_Init();
 	
 	int sysclk_freq = HAL_RCC_GetSysClockFreq();
-
+	
 	Arvi_Setup();
 	
 	while(1)
@@ -124,7 +124,7 @@ int main (void)
 			else OnLED
 			Timer20ms = 0;
 		}
-		
+
 		Arvi_Main();
 	}
 }

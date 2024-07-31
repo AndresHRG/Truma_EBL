@@ -469,7 +469,7 @@ void Lin::updateInfoFrames()
 		infoLeisure1Batt[3] = mAmp & 0x00FF;
 		infoLeisure1Batt[4] = (mAmp & 0xFF00) >> 8;
 		short soc = batteryInstance->soc;
-		infoLeisure1Batt[5] = (variant) ? 0xFE : soc;
+		infoLeisure1Batt[5] = (soc < 0) ? 0xFE : soc;
 		infoLeisure1Batt[9] = this->calculateCheckSum(infoLeisure1Batt, 8, true);//crc
 	}
 	
