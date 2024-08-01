@@ -47,7 +47,7 @@ uint8_t LinMaster::getSizeInfoFrame(uint8_t idInfo)
 	{
 		if(client->verifyIdInfo(idInfo))
 		{
-			result = client->getSizeInfoFrame();
+			result = client->getSizeInfoFrame(idInfo);
 		}
 	}
 	

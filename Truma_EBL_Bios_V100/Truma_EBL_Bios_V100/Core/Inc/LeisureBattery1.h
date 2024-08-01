@@ -9,6 +9,7 @@ class LeisureBattery1 : public Devices, public SystemDevices, public LinClients
 {
 private:
     unsigned long long expirationTime;
+		uint8_t counterFrameInfo;
 public:
     LeisureBattery1(short _idTopic);
 

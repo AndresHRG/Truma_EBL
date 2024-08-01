@@ -8,7 +8,8 @@
 extern LinMaster* linMasterInstance;
 
 #define R_SUPER_VOLT 0x22 // SUPERVOLT
-#define R_LEAB 0x26       // LEAB
+#define R_LEAB_1 0x25       // LEAB
+#define R_LEAB_2 0x26       // LEAB
 
 LeisureBattery1::LeisureBattery1(short _idTopic): Devices(_idTopic), LinClients()
 {
@@ -18,18 +19,18 @@ LeisureBattery1::LeisureBattery1(short _idTopic): Devices(_idTopic), LinClients(
 		timeRemaining = 0;
 		soc = 0;
 		volts = 0;
+		counterFrameInfo = 1;
 	
 		checkVariant();
 	
 		if(!variant3)
 		{
-			this->setIdInfo(linMasterInstance->idCalc(R_SUPER_VOLT));
-			this->setSizeInfoFrame(8);
+			this->setIdInfo(linMasterInstance->idCalc(R_SUPER_VOLT), 8);
 		}
 		else
 		{
-			this->setIdInfo(linMasterInstance->idCalc(R_LEAB));
-			this->setSizeInfoFrame(7);
+			this->setIdInfo(linMasterInstance->idCalc(R_LEAB_1), 8);
+			this->setIdInfo(linMasterInstance->idCalc(R_LEAB_2), 7);
 		}
 		
 }
@@ -43,7 +44,7 @@ void LeisureBattery1::setOff()
 }
 
 void LeisureBattery1::updateState()
-{
+{ 
   if(expirationTime > GetMilliSec())
 		return;
 	
@@ -57,9 +58,15 @@ void LeisureBattery1::updateState()
 		}
 		else
 		{
-			linMasterInstance->sendInfoFrame(linMasterInstance->idCalc(R_LEAB));
-		}
-		
+			if(counterFrameInfo == 1)
+			{
+				linMasterInstance->sendInfoFrame(linMasterInstance->idCalc(R_LEAB_1));
+			}
+			else
+			{
+				linMasterInstance->sendInfoFrame(linMasterInstance->idCalc(R_LEAB_2));
+			}
+		}	
 	}
 	else
 	{
@@ -98,13 +105,20 @@ void LeisureBattery1::processInfoFrame(uint8_t* frame)
 	}
 	else// procesamiento de datos para Leab
 	{
-		volts = ArviGet_mV(BAT_2)/100;
-		
-		soc = frame[0];
-		
-		mAmps = (frame[1] +(frame[2] << 8));
-		mAmps -= 32767;
-		mAmps/= 10;
+		if(counterFrameInfo == 1)
+		{
+			volts =  frame[0];//ArviGet_mV(BAT_2)/100;
+			counterFrameInfo ++;
+		}
+		else
+		{
+			soc = frame[0];
+			
+			mAmps = (frame[1] +(frame[2] << 8));
+			mAmps -= 32767;
+			mAmps/= 10;
+			counterFrameInfo = 1;
+		}
 	}
 	
 	if(soc/2 <= 10)

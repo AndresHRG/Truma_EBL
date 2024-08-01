@@ -13,23 +13,29 @@
 #include <vector>
 #include <stdint.h>
 
+typedef struct
+{
+	uint8_t id;
+	uint8_t size;
+	
+} Frame;
+
 class LinClients
 {
 private:
     short _idControl;
-    std::vector<uint8_t> idsInfo;
-		short sizeInfoFrame;
+    std::vector<Frame> frameInfo;
 public:
     LinClients();
     
     void setIdControl(uint8_t idControl);
-    void setIdInfo(uint8_t idInfo);
+    void setIdInfo(uint8_t idInfo, uint8_t size);
 
     short getIdControl();
     bool verifyIdInfo(uint8_t idInfo);
 		virtual void processInfoFrame(uint8_t* frame);
 		void setSizeInfoFrame(short size);
-		short getSizeInfoFrame();
+		uint8_t getSizeInfoFrame(uint8_t idInfo);
 
 };
 

@@ -8,8 +8,6 @@
 #include "LeisureBattery1.h"
 #include "EngineBattery1.h"
 
-extern UART_HandleTypeDef huart1;
-extern UART_HandleTypeDef huart3;
 extern LeisureBattery1* batteryInstance;
 extern EngineBattery1* eBatteryIntance;
 
