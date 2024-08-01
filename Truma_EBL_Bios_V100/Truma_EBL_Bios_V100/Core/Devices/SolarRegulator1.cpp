@@ -60,5 +60,9 @@ int SolarRegulator1::getTopicState()
 void SolarRegulator1::processInfoFrame(uint8_t* frame)
 {
 	int mAmps = frame[0] + (frame[1] << 8);
+	
+	if(mAmps < 400)
+		mAmps = 0;
+	
 	state = mAmps/10;
 }

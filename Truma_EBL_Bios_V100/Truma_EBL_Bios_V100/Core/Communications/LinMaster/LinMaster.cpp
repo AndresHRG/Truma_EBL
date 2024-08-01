@@ -120,7 +120,7 @@ void LinMaster::processInfoFrame(uint8_t* frame)
 
 uint8_t LinMaster::calculateCheckSum(uint8_t* data, short length)
 {
-    unsigned short sum = 0;
+  uint8_t sum = 0;
 	sum = data[0]; 
 
 	// realizamos calculo de crc
@@ -163,7 +163,6 @@ void LinMaster::sendInfoFrame(uint8_t idInfo)
 {
     uint8_t byteSync = 0x55; // byte de sincronizacion de protocolo lin
 		uint8_t readByte = 0;
-		int i = 0;
 		uint8_t buffer[10];
 		memset(buffer,0,10);
 
