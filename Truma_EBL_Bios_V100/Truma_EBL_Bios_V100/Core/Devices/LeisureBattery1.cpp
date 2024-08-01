@@ -24,12 +24,12 @@ LeisureBattery1::LeisureBattery1(short _idTopic): Devices(_idTopic), LinClients(
 	
 		if(!variant3)
 		{
-			this->setIdInfo(linMasterInstance->idCalc(R_SUPER_VOLT), 8);
+			this->setIdInfo(R_SUPER_VOLT, 8);
 		}
 		else
 		{
-			this->setIdInfo(linMasterInstance->idCalc(R_LEAB_1), 8);
-			this->setIdInfo(linMasterInstance->idCalc(R_LEAB_2), 7);
+			this->setIdInfo(R_LEAB_1, 8);
+			this->setIdInfo(R_LEAB_2, 7);
 		}
 		
 }
@@ -53,17 +53,17 @@ void LeisureBattery1::updateState()
 	{
 		if(!variant3)
 		{
-			linMasterInstance->sendInfoFrame(linMasterInstance->idCalc(R_SUPER_VOLT)); 
+			linMasterInstance->sendInfoFrame(R_SUPER_VOLT); 
 		}
 		else
 		{
 			if(this->numberFrameInfo == 1)
 			{
-				linMasterInstance->sendInfoFrame(linMasterInstance->idCalc(R_LEAB_1));
+				linMasterInstance->sendInfoFrame(R_LEAB_1);
 			}
 			else
 			{
-				linMasterInstance->sendInfoFrame(linMasterInstance->idCalc(R_LEAB_2));
+				linMasterInstance->sendInfoFrame(R_LEAB_2);
 			}
 		}	
 	}
@@ -87,7 +87,7 @@ void LeisureBattery1::topicReceived(uint8_t* topic)
 
 int LeisureBattery1::getTopicState()
 {
-    return state;
+   return state;
 }
 
 void LeisureBattery1::processInfoFrame(uint8_t* frame)
@@ -98,28 +98,32 @@ void LeisureBattery1::processInfoFrame(uint8_t* frame)
 		volts /= 10;
 		
 		mAmps = frame[2] +(frame[3] << 8);
-		mAmps/= 10;
+		mAmps /= 10;
 		
 		soc = frame[5] * 2;
 	}
-	else// procesamiento de datos para Leab
+	else // procesamiento de datos para Leab
 	{
-		if(this->numberFrameInfo == 1)
-		{
-			volts =  frame[0];//ArviGet_mV(BAT_2)/100;
-		}
-		else
-		{
-			soc = frame[0];
-			
-			mAmps = (frame[1] +(frame[2] << 8));
-			mAmps -= 32767;
-			mAmps/= 10;
-		}
-		this->numberFrameInfo ++;
 		
-		if(this->numberFrameInfo > this->getNumberFrameInfo())
-			this->numberFrameInfo = 1;
+		switch(this->numberFrameInfo)
+		{
+			case 1:
+			{
+				volts =  frame[0];//ArviGet_mV(BAT_2)/100;
+				break;
+			}
+			case 2:
+			{
+				soc = frame[0];
+			
+				mAmps = (frame[1] +(frame[2] << 8));
+				mAmps -= 32767;
+				mAmps/= 10;
+				break;
+			}
+			default:
+				break;
+		}
 	}
 	
 	if(soc/2 <= 10)

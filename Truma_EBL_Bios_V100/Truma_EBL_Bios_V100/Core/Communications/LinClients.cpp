@@ -1,4 +1,7 @@
 #include "LinClients.h"
+#include "LinMaster.h"
+
+extern LinMaster* linMasterInstance;
 
 LinClients::LinClients()
 {
@@ -14,17 +17,9 @@ void LinClients::setIdControl(uint8_t idControl)
 void LinClients::setIdInfo(uint8_t idInfo, uint8_t size)
 {
 		Frame frame;
-		frame.id = idInfo;
-		frame.size = size;
 	
-		if(frameInfo.empty())
-		{
-			frame.numberFrame =1;
-		}
-		else
-		{
-			frame.numberFrame = frameInfo.size() + 1;
-		}
+		frame.id = linMasterInstance->idCalc(idInfo);
+		frame.size = size;
 		
     frameInfo.push_back(frame);
 }

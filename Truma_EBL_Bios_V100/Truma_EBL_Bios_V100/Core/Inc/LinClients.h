@@ -17,7 +17,7 @@ typedef struct
 {
 	uint8_t id;
 	uint8_t size;
-	uint8_t numberFrame;
+	
 } Frame;
 
 class LinClients

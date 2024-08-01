@@ -14,7 +14,7 @@ SolarRegulator1::SolarRegulator1(short _idTopic): Devices(_idTopic), LinClients(
 	
 		if(variant3)
 		{
-			this->setIdInfo(linMasterInstance->idCalc(R_LEAB), 8);
+			this->setIdInfo(R_LEAB, 8);
 		}
 }
 
@@ -38,7 +38,7 @@ void SolarRegulator1::updateState()
 	
 	if(variant3)
 	{
-		linMasterInstance->sendInfoFrame(linMasterInstance->idCalc(R_LEAB)); 
+		linMasterInstance->sendInfoFrame(R_LEAB); 
 	}
 	else
 	{

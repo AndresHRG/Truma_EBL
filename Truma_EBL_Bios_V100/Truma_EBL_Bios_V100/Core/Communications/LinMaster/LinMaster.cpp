@@ -114,6 +114,12 @@ void LinMaster::processInfoFrame(uint8_t* frame)
 		if(clients[i]->verifyIdInfo(idInfo))
 		{
 			clients[i]->processInfoFrame(frame+1);
+			clients[i]->numberFrameInfo ++;
+		
+			if(clients[i]->numberFrameInfo > clients[i]->getNumberFrameInfo())
+				clients[i]->numberFrameInfo = 1;
+			
+			break;
 		}
 	}
 }
@@ -165,8 +171,9 @@ void LinMaster::sendInfoFrame(uint8_t idInfo)
 		uint8_t readByte = 0;
 		uint8_t buffer[10];
 		memset(buffer,0,10);
-
+		
+		uint8_t _idInfo = idCalc(idInfo);
 		HAL_LIN_SendBreak(&huart3);
 		Tx_UART3(&byteSync, 1);// enviamos byte de sincronizacion Lin
-		Tx_UART3(&idInfo, 1); // enviamos byte info que corresponda
+		Tx_UART3(&_idInfo, 1); // enviamos byte info que corresponda
 }
