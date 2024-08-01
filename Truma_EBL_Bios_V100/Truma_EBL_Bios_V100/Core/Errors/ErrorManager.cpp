@@ -37,32 +37,32 @@ void addError(short classId, short code)
 
 void cleanError(short classId, short code)
 {
-		for(int i = 0; i < errorList.size(); i++)
+	for(int i = 0; i < errorList.size(); i++)
+	{
+		if((errorList[i].classId == classId) && (errorList[i].code == code))
 		{
-			if((errorList[i].classId == classId) && (errorList[i].code == code))
-			{
-				errorList.erase(errorList.begin() + i);
-			}
+			errorList.erase(errorList.begin() + i);
 		}
+	}
 }
 
 errors getError()
 {
-    errors error;
+	errors error;
 
-    error.classId = 0;
-    error.code = 0;
+	error.classId = 0;
+	error.code = 0;
 
-    if(!errorList.empty())
-    {
-        error.classId = errorList[0].classId;
-        error.code = errorList[0].code;
-				
-				errorList.erase(errorList.begin());
-				errorList.push_back(error);
-    }
+	if(!errorList.empty())
+	{
+			error.classId = errorList[0].classId;
+			error.code = errorList[0].code;
+			
+			errorList.erase(errorList.begin());
+			errorList.push_back(error);
+	}
 
-    return error;
+	return error;
 }
 
 short getNumErrors()
