@@ -3,7 +3,7 @@
 LinClients::LinClients()
 {
     _idControl = 0;
-
+		numberFrameInfo = 1;
 }
     
 void LinClients::setIdControl(uint8_t idControl)
@@ -17,10 +17,19 @@ void LinClients::setIdInfo(uint8_t idInfo, uint8_t size)
 		frame.id = idInfo;
 		frame.size = size;
 	
+		if(frameInfo.empty())
+		{
+			frame.numberFrame =1;
+		}
+		else
+		{
+			frame.numberFrame = frameInfo.size() + 1;
+		}
+		
     frameInfo.push_back(frame);
 }
  
-short LinClients::getIdControl()
+uint8_t LinClients::getIdControl()
 {
     return _idControl;
 }
@@ -58,4 +67,9 @@ uint8_t LinClients::getSizeInfoFrame(uint8_t idInfo)
 	}
 	
 	return 8;// default size
+}
+
+uint8_t LinClients::getNumberFrameInfo()
+{
+	return frameInfo.size();
 }

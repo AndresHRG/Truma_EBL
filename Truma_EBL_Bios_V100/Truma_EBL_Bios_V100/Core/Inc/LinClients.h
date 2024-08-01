@@ -17,26 +17,29 @@ typedef struct
 {
 	uint8_t id;
 	uint8_t size;
-	
+	uint8_t numberFrame;
 } Frame;
 
 class LinClients
 {
 private:
-    short _idControl;
+    uint8_t _idControl;
     std::vector<Frame> frameInfo;
+
 public:
     LinClients();
     
     void setIdControl(uint8_t idControl);
     void setIdInfo(uint8_t idInfo, uint8_t size);
 
-    short getIdControl();
+    uint8_t getIdControl();
     bool verifyIdInfo(uint8_t idInfo);
 		virtual void processInfoFrame(uint8_t* frame);
-		void setSizeInfoFrame(short size);
 		uint8_t getSizeInfoFrame(uint8_t idInfo);
+		uint8_t getNumberFrameInfo();
 
+		//Index frame info
+		uint8_t numberFrameInfo;
 };
 
 #endif

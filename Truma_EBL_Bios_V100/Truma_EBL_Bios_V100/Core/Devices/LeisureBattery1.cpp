@@ -19,7 +19,6 @@ LeisureBattery1::LeisureBattery1(short _idTopic): Devices(_idTopic), LinClients(
 		timeRemaining = 0;
 		soc = 0;
 		volts = 0;
-		counterFrameInfo = 1;
 	
 		checkVariant();
 	
@@ -58,7 +57,7 @@ void LeisureBattery1::updateState()
 		}
 		else
 		{
-			if(counterFrameInfo == 1)
+			if(this->numberFrameInfo == 1)
 			{
 				linMasterInstance->sendInfoFrame(linMasterInstance->idCalc(R_LEAB_1));
 			}
@@ -105,10 +104,9 @@ void LeisureBattery1::processInfoFrame(uint8_t* frame)
 	}
 	else// procesamiento de datos para Leab
 	{
-		if(counterFrameInfo == 1)
+		if(this->numberFrameInfo == 1)
 		{
 			volts =  frame[0];//ArviGet_mV(BAT_2)/100;
-			counterFrameInfo ++;
 		}
 		else
 		{
@@ -117,8 +115,11 @@ void LeisureBattery1::processInfoFrame(uint8_t* frame)
 			mAmps = (frame[1] +(frame[2] << 8));
 			mAmps -= 32767;
 			mAmps/= 10;
-			counterFrameInfo = 1;
 		}
+		this->numberFrameInfo ++;
+		
+		if(this->numberFrameInfo > this->getNumberFrameInfo())
+			this->numberFrameInfo = 1;
 	}
 	
 	if(soc/2 <= 10)
