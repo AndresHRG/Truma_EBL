@@ -96,8 +96,6 @@ void Bios_Init(void)
 	OnDRV
 	OnBLK1_1
 	OnBLK1_2
-	Enable_LIN1	
-	Enable_LIN2
 }
 
 int main (void)

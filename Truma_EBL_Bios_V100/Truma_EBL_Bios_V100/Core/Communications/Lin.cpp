@@ -20,8 +20,7 @@ short counterErrors = 1;
 
 Lin::Lin(): CommunicationManager()
 {
-		ArviSet(LIN_BLK9_B,1);// HABILITAMOS DRV
-		ArviSet(LIN_BLK9_A,1);// HABILITAMOS DRV
+		Enable_LIN1	// HABILITAMOS DRV
 		maxReceiveSize = 9;
 		pReceive = 1;
 		linstate = linHeader;

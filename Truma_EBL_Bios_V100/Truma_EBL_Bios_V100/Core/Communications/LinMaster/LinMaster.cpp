@@ -27,7 +27,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 
 LinMaster::LinMaster()
 {
-		ArviSet(LIN_BLK9_A,1);// HABILITAMOS DRV
+		Enable_LIN2// HABILITAMOS DRV
     linstate = linHeader;
 		maxReceiveSize = 9;
 		pReceive = 1;
@@ -116,7 +116,7 @@ void LinMaster::processInfoFrame(uint8_t* frame)
 			clients[i]->processInfoFrame(frame+1);
 			clients[i]->numberFrameInfo ++;
 		
-			if(clients[i]->numberFrameInfo > clients[i]->getNumberFrameInfo())
+			if(clients[i]->numberFrameInfo > clients[i]->getNumberFramesInfo())
 				clients[i]->numberFrameInfo = 1;
 			
 			break;

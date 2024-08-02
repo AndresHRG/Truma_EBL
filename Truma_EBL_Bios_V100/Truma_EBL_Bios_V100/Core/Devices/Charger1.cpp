@@ -3,7 +3,6 @@
 #include "Utils.h"
 #include "Lin.h"
 
-
 #define ID_INFO 0x16 //LEAB
 
 extern Lin* linInstance;

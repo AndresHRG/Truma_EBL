@@ -57,7 +57,7 @@ void LeisureBattery1::updateState()
 		}
 		else
 		{
-			if(this->numberFrameInfo == 1)
+			if(this->numberFrameInfo == frame1)
 			{
 				linMasterInstance->sendInfoFrame(R_LEAB_1);
 			}
@@ -107,12 +107,12 @@ void LeisureBattery1::processInfoFrame(uint8_t* frame)
 		
 		switch(this->numberFrameInfo)
 		{
-			case 1:
+			case frame1:
 			{
-				volts =  frame[0];//ArviGet_mV(BAT_2)/100;
+				volts =  frame[0];
 				break;
 			}
-			case 2:
+			case frame2:
 			{
 				soc = frame[0];
 			

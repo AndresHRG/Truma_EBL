@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objets\Truma_EBL_Bios_V100.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objets\Truma_EBL_Bios_V100.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Thu Aug  1 16:54:58 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Fri Aug  2 15:05:49 2024
 <BR><P>
 <H3>Maximum Stack Usage =        252 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1032,9 +1032,7 @@ Global Symbols
 <LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_IO_Expander
 <LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::LinMaster()
-<LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lin::Lin()
-<LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Utils::ioDigitalWrite(IOParameters const&, short)
+<BR>[Called By]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Utils::ioDigitalWrite(IOParameters const&, short)
 </UL>
 
 <P><STRONG><a name="[10d]"></a>Arvi_Main</STRONG> (Thumb, 194 bytes, Stack size 16 bytes, arvi-main.o(.text.Arvi_Main))
@@ -1062,7 +1060,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[117]"></a>Bios_Init</STRONG> (Thumb, 170 bytes, Stack size 8 bytes, main.o(.text.Bios_Init))
+<P><STRONG><a name="[117]"></a>Bios_Init</STRONG> (Thumb, 150 bytes, Stack size 8 bytes, main.o(.text.Bios_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 252 + Unknown Stack Size
 <LI>Call Chain = Bios_Init &rArr; MX_ADC2_Init &rArr; HAL_ADC_Init &rArr; HAL_ADC_MspInit &rArr; HAL_GPIO_Init
 </UL>
@@ -1279,7 +1277,9 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[10c]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32g4xx_hal_gpio.o(.text.HAL_GPIO_WritePin))
-<BR><BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR><BR>[Called By]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::LinMaster()
+<LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lin::Lin()
+<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bios_Init
 <LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ArviSet
@@ -1989,7 +1989,7 @@ Global Symbols
 <BR>[Address Reference Count : 2]<UL><LI> linclients.o(.rodata._ZTV10LinClients)
 <LI> inverter.o(.rodata._ZTV8Inverter)
 </UL>
-<P><STRONG><a name="[196]"></a>LinClients::getNumberFrameInfo()</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, linclients.o(.text._ZN10LinClients18getNumberFrameInfoEv))
+<P><STRONG><a name="[196]"></a>LinClients::getNumberFramesInfo()</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, linclients.o(.text._ZN10LinClients19getNumberFramesInfoEv))
 <BR><BR>[Called By]<UL><LI><a href="#[157]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::composeMsgLin(unsigned char)
 </UL>
 
@@ -2435,9 +2435,9 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[114]"></a>Lin::Lin()</STRONG> (Thumb, 70 bytes, Stack size 24 bytes, lin.o(.text._ZN3LinC2Ev))
-<BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = Lin::Lin() &rArr; ArviSet &rArr; Write_IO_Expander &rArr; HAL_I2C_Mem_Write &rArr; I2C_WaitOnSTOPFlagUntilTimeout &rArr; I2C_IsErrorOccurred
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = Lin::Lin() &rArr; HAL_UART_Receive_IT
 </UL>
-<BR>[Calls]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ArviSet
+<BR>[Calls]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[191]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CommunicationManager::CommunicationManager__sub_object()
 <LI><a href="#[154]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Receive_IT
 </UL>
@@ -2712,7 +2712,7 @@ Global Symbols
 <P><STRONG><a name="[157]"></a>LinMaster::composeMsgLin(unsigned char)</STRONG> (Thumb, 264 bytes, Stack size 32 bytes, linmaster.o(.text._ZN9LinMaster13composeMsgLinEh))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = LinMaster::composeMsgLin(unsigned char) &rArr; LinClients::verifyIdInfo(unsigned char)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[196]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinClients::getNumberFrameInfo()
+<BR>[Calls]<UL><LI><a href="#[196]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinClients::getNumberFramesInfo()
 <LI><a href="#[195]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinClients::getSizeInfoFrame(unsigned char)
 <LI><a href="#[194]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinClients::verifyIdInfo(unsigned char)
 </UL>
@@ -2763,16 +2763,16 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initTopics()
 </UL>
 
-<P><STRONG><a name="[115]"></a>LinMaster::LinMaster()</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, linmaster.o(.text._ZN9LinMasterC2Ev))
-<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = LinMaster::LinMaster() &rArr; ArviSet &rArr; Write_IO_Expander &rArr; HAL_I2C_Mem_Write &rArr; I2C_WaitOnSTOPFlagUntilTimeout &rArr; I2C_IsErrorOccurred
+<P><STRONG><a name="[115]"></a>LinMaster::LinMaster()</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, linmaster.o(.text._ZN9LinMasterC2Ev))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = LinMaster::LinMaster() &rArr; HAL_UART_Receive_IT
 </UL>
-<BR>[Calls]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ArviSet
+<BR>[Calls]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[154]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Receive_IT
 </UL>
 <BR>[Called By]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Arvi_Setup
 </UL>
 
-<P><STRONG><a name="[1ed]"></a>LinMaster::LinMaster__sub_object()</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, linmaster.o(.text._ZN9LinMasterC2Ev), UNUSED)
+<P><STRONG><a name="[1ed]"></a>LinMaster::LinMaster__sub_object()</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, linmaster.o(.text._ZN9LinMasterC2Ev), UNUSED)
 
 <P><STRONG><a name="[c7]"></a>WaterPump::updateState()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, waterpump.o(.text._ZN9WaterPump11updateStateEv))
 <BR>[Address Reference Count : 1]<UL><LI> waterpump.o(.rodata._ZTV9WaterPump)

@@ -64,7 +64,7 @@ uint8_t LinClients::getSizeInfoFrame(uint8_t idInfo)
 	return 8;// default size
 }
 
-uint8_t LinClients::getNumberFrameInfo()
+uint8_t LinClients::getNumberFramesInfo()
 {
 	return frameInfo.size();
 }

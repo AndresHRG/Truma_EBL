@@ -148,7 +148,7 @@ I (..\Core\Inc\Init.h)(0x6694D58D)
 I (..\Core\Inc\Comm.h)(0x66A76347)
 I (..\Core\Inc\Truma_EBL_Bios_V100.h)(0x66AA0253)
 I (..\Core\Inc\Analog.h)(0x66AA0016)
-F (../Core/Src/main.c)(0x66AA038E)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -w -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include-I./RTE/_Truma_EBL_Bios_V100-I"C:/Users/PC GAMING/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/PC GAMING/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.6.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include"-D__UVISION_VERSION="540" -DSTM32G491xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G491xx-o ./objets/main.o -MMD)
+F (../Core/Src/main.c)(0x66AC8749)(-xc -std=c11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O1 -ffunction-sections -w -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include-I./RTE/_Truma_EBL_Bios_V100-I"C:/Users/PC GAMING/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/PC GAMING/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.6.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include"-D__UVISION_VERSION="540" -DSTM32G491xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G491xx-o ./objets/main.o -MMD)
 I (..\Core\Inc\main.h)(0x66941CA8)
 I (..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal.h)(0x65EB6D71)
 I (..\Core\Inc\stm32g4xx_hal_conf.h)(0x667C572A)
@@ -262,7 +262,7 @@ I (..\Core\Inc\CommunicationManager.h)(0x669A6177)
 I (..\Core\Inc\Devices.h)(0x65FAF803)
 I (..\Core\Inc\Enums.h)(0x65E8AB5A)
 I (..\Core\Inc\LinMaster.h)(0x66A8FFB8)
-I (..\Core\Inc\LinClients.h)(0x66AB9FAD)
+I (..\Core\Inc\LinClients.h)(0x66ACA44F)
 I (..\Core\Inc\TopicsList.h)(0x65F2C73B)
 I (..\Core\Inc\ErrorManager.h)(0x65FAE813)
 I (..\Core\Inc\EmptyingValve.h)(0x66040D03)
@@ -1089,7 +1089,7 @@ F (..\Core\Communications\ComunicationManager.cpp)(0x66A78467)(-xc++ -std=c++17 
 I (..\Core\Inc\CommunicationManager.h)(0x669A6177)
 I (..\Core\Inc\Devices.h)(0x65FAF803)
 I (..\Core\Inc\Enums.h)(0x65E8AB5A)
-F (..\Core\Communications\Lin.cpp)(0x66AB790C)(-xc++ -std=c++17 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-gdwarf-4 -O1 -ffunction-sections -w -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include-I./RTE/_Truma_EBL_Bios_V100-I"C:/Users/PC GAMING/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/PC GAMING/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.6.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include"-D__UVISION_VERSION="540" -DSTM32G491xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G491xx-o ./objets/lin.o -MMD)
+F (..\Core\Communications\Lin.cpp)(0x66AC87E1)(-xc++ -std=c++17 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-gdwarf-4 -O1 -ffunction-sections -w -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include-I./RTE/_Truma_EBL_Bios_V100-I"C:/Users/PC GAMING/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/PC GAMING/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.6.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include"-D__UVISION_VERSION="540" -DSTM32G491xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G491xx-o ./objets/lin.o -MMD)
 I (..\Core\Inc\Lin.h)(0x66A1FD08)
 I (..\Core\Inc\CommunicationManager.h)(0x669A6177)
 I (..\Core\Inc\Devices.h)(0x65FAF803)
@@ -1134,11 +1134,11 @@ I (..\Drivers\STM32G4xx_HAL_Driver\Inc\stm32g4xx_hal_uart_ex.h)(0x65EB6D71)
 I (..\Core\Inc\ErrorManager.h)(0x65FAE813)
 I (..\Core\Inc\LeisureBattery1.h)(0x66AB944A)
 I (..\Core\Inc\SystemDevices.h)(0x65F03CDE)
-I (..\Core\Inc\LinClients.h)(0x66AB9FAD)
+I (..\Core\Inc\LinClients.h)(0x66ACA44F)
 I (..\Core\Inc\EngineBattery1.h)(0x66A212FF)
-F (..\Core\Communications\LinMaster\LinMaster.cpp)(0x66ABA122)(-xc++ -std=c++17 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-gdwarf-4 -O1 -ffunction-sections -w -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include-I./RTE/_Truma_EBL_Bios_V100-I"C:/Users/PC GAMING/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/PC GAMING/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.6.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include"-D__UVISION_VERSION="540" -DSTM32G491xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G491xx-o ./objets/linmaster.o -MMD)
+F (..\Core\Communications\LinMaster\LinMaster.cpp)(0x66ACD9AB)(-xc++ -std=c++17 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-gdwarf-4 -O1 -ffunction-sections -w -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include-I./RTE/_Truma_EBL_Bios_V100-I"C:/Users/PC GAMING/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/PC GAMING/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.6.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include"-D__UVISION_VERSION="540" -DSTM32G491xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G491xx-o ./objets/linmaster.o -MMD)
 I (..\Core\Inc\LinMaster.h)(0x66A8FFB8)
-I (..\Core\Inc\LinClients.h)(0x66AB9FAD)
+I (..\Core\Inc\LinClients.h)(0x66ACA44F)
 I (..\Core\Inc\Truma_EBL_Bios_V100.h)(0x66AA0253)
 I (..\Core\Inc\Analog.h)(0x66AA0016)
 I (..\Core\Inc\Utils.h)(0x6694D730)
@@ -1180,8 +1180,8 @@ I (..\Core\Inc\Lin.h)(0x66A1FD08)
 I (..\Core\Inc\CommunicationManager.h)(0x669A6177)
 I (..\Core\Inc\Devices.h)(0x65FAF803)
 I (..\Core\Inc\Enums.h)(0x65E8AB5A)
-F (..\Core\Communications\LinClients.cpp)(0x66ABA122)(-xc++ -std=c++17 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-gdwarf-4 -O1 -ffunction-sections -w -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include-I./RTE/_Truma_EBL_Bios_V100-I"C:/Users/PC GAMING/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/PC GAMING/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.6.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include"-D__UVISION_VERSION="540" -DSTM32G491xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G491xx-o ./objets/linclients.o -MMD)
-I (..\Core\Inc\LinClients.h)(0x66AB9FAD)
+F (..\Core\Communications\LinClients.cpp)(0x66ACA44F)(-xc++ -std=c++17 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-gdwarf-4 -O1 -ffunction-sections -w -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include-I./RTE/_Truma_EBL_Bios_V100-I"C:/Users/PC GAMING/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/PC GAMING/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.6.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include"-D__UVISION_VERSION="540" -DSTM32G491xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G491xx-o ./objets/linclients.o -MMD)
+I (..\Core\Inc\LinClients.h)(0x66ACA44F)
 I (..\Core\Inc\LinMaster.h)(0x66A8FFB8)
 F (..\Core\Devices\AirConditioner1.cpp)(0x669A3DDD)(-xc++ -std=c++17 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-gdwarf-4 -O1 -ffunction-sections -w -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include-I./RTE/_Truma_EBL_Bios_V100-I"C:/Users/PC GAMING/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/PC GAMING/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.6.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include"-D__UVISION_VERSION="540" -DSTM32G491xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G491xx-o ./objets/airconditioner1.o -MMD)
 I (..\Core\Inc\AirConditioner1.h)(0x660E5AFE)
@@ -1207,7 +1207,7 @@ I (..\Core\Inc\AddressIO.h)(0x66A8A8F1)
 I (..\Core\Inc\TrumaCombiState.h)(0x660E5AFE)
 I (..\Core\Inc\Lin.h)(0x66A1FD08)
 I (..\Core\Inc\CommunicationManager.h)(0x669A6177)
-F (..\Core\Devices\Charger1.cpp)(0x669A3DDD)(-xc++ -std=c++17 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-gdwarf-4 -O1 -ffunction-sections -w -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include-I./RTE/_Truma_EBL_Bios_V100-I"C:/Users/PC GAMING/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/PC GAMING/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.6.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include"-D__UVISION_VERSION="540" -DSTM32G491xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G491xx-o ./objets/charger1.o -MMD)
+F (..\Core\Devices\Charger1.cpp)(0x66ACD643)(-xc++ -std=c++17 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-gdwarf-4 -O1 -ffunction-sections -w -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include-I./RTE/_Truma_EBL_Bios_V100-I"C:/Users/PC GAMING/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/PC GAMING/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.6.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include"-D__UVISION_VERSION="540" -DSTM32G491xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G491xx-o ./objets/charger1.o -MMD)
 I (..\Core\Inc\Charger1.h)(0x65F30287)
 I (..\Core\Inc\Devices.h)(0x65FAF803)
 I (..\Core\Inc\Enums.h)(0x65E8AB5A)
@@ -1374,18 +1374,18 @@ I (..\Core\Inc\Inverter.h)(0x66A8C95D)
 I (..\Core\Inc\Devices.h)(0x65FAF803)
 I (..\Core\Inc\Enums.h)(0x65E8AB5A)
 I (..\Core\Inc\SystemDevices.h)(0x65F03CDE)
-I (..\Core\Inc\LinClients.h)(0x66AB9FAD)
+I (..\Core\Inc\LinClients.h)(0x66ACA44F)
 I (..\Core\Inc\Truma_EBL_Bios_V100.h)(0x66AA0253)
 I (..\Core\Inc\Analog.h)(0x66AA0016)
 I (..\Core\Inc\Utils.h)(0x6694D730)
 I (..\Core\Inc\AddressIO.h)(0x66A8A8F1)
 I (..\Core\Inc\LinMaster.h)(0x66A8FFB8)
-F (..\Core\Devices\LeisureBattery1.cpp)(0x66ABA1BA)(-xc++ -std=c++17 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-gdwarf-4 -O1 -ffunction-sections -w -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include-I./RTE/_Truma_EBL_Bios_V100-I"C:/Users/PC GAMING/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/PC GAMING/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.6.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include"-D__UVISION_VERSION="540" -DSTM32G491xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G491xx-o ./objets/leisurebattery1.o -MMD)
+F (..\Core\Devices\LeisureBattery1.cpp)(0x66AC9EF4)(-xc++ -std=c++17 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-gdwarf-4 -O1 -ffunction-sections -w -I ../Core/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc -I ../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I ../Drivers/CMSIS/Include-I./RTE/_Truma_EBL_Bios_V100-I"C:/Users/PC GAMING/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include"-I"C:/Users/PC GAMING/AppData/Local/Arm/Packs/Keil/STM32G4xx_DFP/1.6.0/Drivers/CMSIS/Device/ST/STM32G4xx/Include"-D__UVISION_VERSION="540" -DSTM32G491xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32G491xx-o ./objets/leisurebattery1.o -MMD)
 I (..\Core\Inc\LeisureBattery1.h)(0x66AB944A)
 I (..\Core\Inc\Devices.h)(0x65FAF803)
 I (..\Core\Inc\Enums.h)(0x65E8AB5A)
 I (..\Core\Inc\SystemDevices.h)(0x65F03CDE)
-I (..\Core\Inc\LinClients.h)(0x66AB9FAD)
+I (..\Core\Inc\LinClients.h)(0x66ACA44F)
 I (..\Core\Inc\Truma_EBL_Bios_V100.h)(0x66AA0253)
 I (..\Core\Inc\Analog.h)(0x66AA0016)
 I (..\Core\Inc\Utils.h)(0x6694D730)
@@ -1509,7 +1509,7 @@ I (..\Core\Inc\SolarRegulator1.h)(0x66A8BF17)
 I (..\Core\Inc\Devices.h)(0x65FAF803)
 I (..\Core\Inc\Enums.h)(0x65E8AB5A)
 I (..\Core\Inc\SystemDevices.h)(0x65F03CDE)
-I (..\Core\Inc\LinClients.h)(0x66AB9FAD)
+I (..\Core\Inc\LinClients.h)(0x66ACA44F)
 I (..\Core\Inc\Truma_EBL_Bios_V100.h)(0x66AA0253)
 I (..\Core\Inc\Analog.h)(0x66AA0016)
 I (..\Core\Inc\Utils.h)(0x6694D730)
