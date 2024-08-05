@@ -41,7 +41,7 @@ void LinMaster::addClient(LinClients* client)
 
 uint8_t LinMaster::getSizeInfoFrame(uint8_t idInfo)
 {
-	uint8_t result = 9;
+	uint8_t result = 8;
 	
 	for(const auto &client : clients)
 	{

@@ -1121,29 +1121,9 @@
           <GroupName>Devices</GroupName>
           <Files>
             <File>
-              <FileName>AirConditioner1.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\Core\Devices\AirConditioner1.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Boiler.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\Core\Devices\Boiler.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Charger1.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\Core\Devices\Charger1.cpp</FilePath>
-            </File>
-            <File>
               <FileName>Devices.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\Core\Devices\Devices.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>DoorStep.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\Core\Devices\DoorStep.cpp</FilePath>
             </File>
             <File>
               <FileName>DrainValve.cpp</FileName>
@@ -1156,11 +1136,6 @@
               <FilePath>..\Core\Devices\EmptyingValve.cpp</FilePath>
             </File>
             <File>
-              <FileName>EnergySpliter.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\Core\Devices\EnergySpliter.cpp</FilePath>
-            </File>
-            <File>
               <FileName>EngineBattery1.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\Core\Devices\EngineBattery1.cpp</FilePath>
@@ -1169,11 +1144,6 @@
               <FileName>ExternalLigths.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\Core\Devices\ExternalLigths.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>ExternalLigths2.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\Core\Devices\ExternalLigths2.cpp</FilePath>
             </File>
             <File>
               <FileName>FloorHeating.cpp</FileName>
@@ -1196,19 +1166,9 @@
               <FilePath>..\Core\Devices\Fuses.cpp</FilePath>
             </File>
             <File>
-              <FileName>GrayTankHeating.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\Core\Devices\GrayTankHeating.cpp</FilePath>
-            </File>
-            <File>
               <FileName>GrayWater_1.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\Core\Devices\GrayWater_1.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Heater.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\Core\Devices\Heater.cpp</FilePath>
             </File>
             <File>
               <FileName>InternalLigths.cpp</FileName>
@@ -1231,54 +1191,9 @@
               <FilePath>..\Core\Devices\Ligths_1.cpp</FilePath>
             </File>
             <File>
-              <FileName>Ligths_2.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\Core\Devices\Ligths_2.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Ligths_3.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\Core\Devices\Ligths_3.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Ligths_4.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\Core\Devices\Ligths_4.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Ligths_5.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\Core\Devices\Ligths_5.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Ligths_6.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\Core\Devices\Ligths_6.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Ligths_Gr_C.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\Core\Devices\Ligths_Gr_C.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Ligths_Gr_D.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\Core\Devices\Ligths_Gr_D.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>MainSwitch.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\Core\Devices\MainSwitch.cpp</FilePath>
-            </File>
-            <File>
               <FileName>Multimedia.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\Core\Devices\Multimedia.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>Sat.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\Core\Devices\Sat.cpp</FilePath>
             </File>
             <File>
               <FileName>SolarRegulator1.cpp</FileName>

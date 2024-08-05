@@ -1,3 +1,13 @@
+/* *******************************************************************************
+ *       @file              LeisureBattery1.cpp
+ *       @expl              Proof of concept
+ *       @author            Andres Rivas
+ *       @coauthor
+ *       @Date:             15-02-2024
+ *       @copyright         Arvimarine Control Systems SL "ARVIKON"
+ *       @Programming mode  Survival Mode
+ ********************************************************************************/
+ 
 #include "LeisureBattery1.h"
 #include "Truma_EBL_Bios_V100.h"
 #include "Utils.h"
@@ -57,13 +67,18 @@ void LeisureBattery1::updateState()
 		}
 		else
 		{
-			if(this->numberFrameInfo == frame1)
+			switch(this->numberFrameInfo)
 			{
-				linMasterInstance->sendInfoFrame(R_LEAB_1);
-			}
-			else
-			{
-				linMasterInstance->sendInfoFrame(R_LEAB_2);
+				case frame1:
+				{
+					linMasterInstance->sendInfoFrame(R_LEAB_1);
+				}
+				case frame2:
+				{
+					linMasterInstance->sendInfoFrame(R_LEAB_2);
+				}
+				default:
+					break;
 			}
 		}	
 	}
@@ -104,7 +119,6 @@ void LeisureBattery1::processInfoFrame(uint8_t* frame)
 	}
 	else // procesamiento de datos para Leab
 	{
-		
 		switch(this->numberFrameInfo)
 		{
 			case frame1:

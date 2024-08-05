@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objets\Truma_EBL_Bios_V100.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objets\Truma_EBL_Bios_V100.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Fri Aug  2 15:05:49 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Mon Aug  5 14:14:19 2024
 <BR><P>
 <H3>Maximum Stack Usage =        252 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -233,7 +233,7 @@ Function Pointers
  <LI><a href="#[bc]">non-virtual thunk to Ligths1::updateState()</a> from ligths_1.o(.text._ZThn8_N7Ligths111updateStateEv) referenced from ligths_1.o(.rodata._ZTV7Ligths1)
  <LI><a href="#[c2]">non-virtual thunk to Inverter::updateState()</a> from inverter.o(.text._ZThn8_N8Inverter11updateStateEv) referenced from inverter.o(.rodata._ZTV8Inverter)
  <LI><a href="#[c8]">non-virtual thunk to WaterPump::updateState()</a> from waterpump.o(.text._ZThn8_N9WaterPump11updateStateEv) referenced from waterpump.o(.rodata._ZTV9WaterPump)
- <LI><a href="#[88]">__cxa_pure_virtual</a> from cxa_virtual.cpp.o(.text.__cxa_pure_virtual) referenced from airconditioner1.o(.rodata._ZTV13SystemDevices)
+ <LI><a href="#[88]">__cxa_pure_virtual</a> from cxa_virtual.cpp.o(.text.__cxa_pure_virtual) referenced from drainvalve.o(.rodata._ZTV13SystemDevices)
  <LI><a href="#[88]">__cxa_pure_virtual</a> from cxa_virtual.cpp.o(.text.__cxa_pure_virtual) referenced 4 times from devices.o(.rodata._ZTV7Devices)
  <LI><a href="#[5e]">__main</a> from __main.o(!!!main) referenced from startup_stm32g491xx.o(.text)
 </UL>
@@ -661,18 +661,18 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 48 + Unknown Stack Size
 <LI>Call Chain = abort &rArr; __rt_SIGABRT &rArr; __rt_SIGABRT_inner &rArr; __default_signal_display &rArr; _ttywrch
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
-<LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGABRT
+<BR>[Calls]<UL><LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGABRT
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_shutdown
 </UL>
 <BR>[Called By]<UL><LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;std::__throw_bad_array_new_length[abi:v16000]()
 <LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::addClient(LinClients*)
 <LI><a href="#[16c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CommunicationManager::addClients(Devices*)
 <LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initTopics()
+<LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::addError(short, short)
 <LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinClients::setIdInfo(unsigned char, unsigned char)
 <LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::getError()
 <LI><a href="#[19a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;abort_message
-<LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::addError(short, short)
 </UL>
 
 <P><STRONG><a name="[e4]"></a>__cxa_atexit</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, cxa_atexit.o(.text))
@@ -685,15 +685,15 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[182]"></a>__aeabi_memmove</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_memmove_v6.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinClients::setIdInfo(unsigned char, unsigned char)
-<LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::getError()
-<LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::cleanError(short, short)
+<BR><BR>[Called By]<UL><LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::cleanError(short, short)
 <LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::addError(short, short)
+<LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinClients::setIdInfo(unsigned char, unsigned char)
+<LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::getError()
 </UL>
 
 <P><STRONG><a name="[e6]"></a>__rt_memmove</STRONG> (Thumb, 132 bytes, Stack size 0 bytes, rt_memmove_v6.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__memmove_aligned
-<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<BR><BR>[Calls]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__memmove_aligned
 </UL>
 
 <P><STRONG><a name="[1c4]"></a>__memmove_lastfew</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memmove_v6.o(.text), UNUSED)
@@ -800,8 +800,8 @@ Global Symbols
 <P><STRONG><a name="[1cd]"></a>_memcpy_lastbytes</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_v6.o(.text), UNUSED)
 
 <P><STRONG><a name="[ea]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_memmove_w
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_memcpy
+<BR><BR>[Called By]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_memcpy
+<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_memmove_w
 </UL>
 
 <P><STRONG><a name="[1ce]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
@@ -823,8 +823,8 @@ Global Symbols
 <P><STRONG><a name="[1d3]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, indicate_semi.o(.text), UNUSED)
 
 <P><STRONG><a name="[ef]"></a>__rt_ddtor_pointer_addr</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, rt_ddtor_pointer_addr_intlibspace.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__cxa_finalize
-<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_atexit
+<BR><BR>[Called By]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_atexit
+<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__cxa_finalize
 </UL>
 
 <P><STRONG><a name="[1d4]"></a>__use_no_heap</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, hguard.o(.text), UNUSED)
@@ -876,8 +876,8 @@ Global Symbols
 <P><STRONG><a name="[f1]"></a>__sig_exit</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, defsig_exit.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTMEM
-<LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGABRT
+<BR>[Called By]<UL><LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGABRT
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_SIGRTMEM
 </UL>
 
 <P><STRONG><a name="[f0]"></a>__rt_SIGABRT_inner</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, defsig_abrt_inner.o(.text))
@@ -1118,17 +1118,17 @@ Global Symbols
 
 <P><STRONG><a name="[10e]"></a>GetMilliSec</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, main.o(.text.GetMilliSec))
 <BR><BR>[Called By]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Arvi_Main
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GrayWater1::topicReceived(unsigned char*)
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GrayWater1::updateState()
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Fuses::updateState()
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FreshWater1::topicReceived(unsigned char*)
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FreshWater1::updateState()
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;non-virtual thunk to EngineBattery1::updateState()
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EngineBattery1::updateState()
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EmptyingValve::topicReceived(unsigned char*)
 <LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;non-virtual thunk to SolarRegulator1::updateState()
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SolarRegulator1::updateState()
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LeisureBattery1::updateState()
-<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GrayWater1::topicReceived(unsigned char*)
-<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GrayWater1::updateState()
-<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Fuses::updateState()
-<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FreshWater1::topicReceived(unsigned char*)
-<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FreshWater1::updateState()
 </UL>
 
 <P><STRONG><a name="[15a]"></a>HAL_ADC_ConfigChannel</STRONG> (Thumb, 852 bytes, Stack size 24 bytes, stm32g4xx_hal_adc.o(.text.HAL_ADC_ConfigChannel))
@@ -2269,17 +2269,17 @@ Global Symbols
 
 <P><STRONG><a name="[1e4]"></a>InternalLigths::InternalLigths__sub_object(short)</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, internalligths.o(.text._ZN14InternalLigthsC2Es), UNUSED)
 
-<P><STRONG><a name="[9f]"></a>LeisureBattery1::updateState()</STRONG> (Thumb, 252 bytes, Stack size 16 bytes, leisurebattery1.o(.text._ZN15LeisureBattery111updateStateEv))
+<P><STRONG><a name="[9f]"></a>LeisureBattery1::updateState()</STRONG> (Thumb, 260 bytes, Stack size 16 bytes, leisurebattery1.o(.text._ZN15LeisureBattery111updateStateEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112 + Unknown Stack Size
 <LI>Call Chain = LeisureBattery1::updateState() &rArr; Errors::addError(short, short) &rArr; operator new(unsigned int) &rArr; malloc &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free
 </UL>
 <BR>[Calls]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetMilliSec
 <LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ArviGet_mA
 <LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ArviGet_mV
-<LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::sendInfoFrame(unsigned char)
 <LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::cleanError(short, short)
 <LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::errorExists(short, short)
 <LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::addError(short, short)
+<LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::sendInfoFrame(unsigned char)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;non-virtual thunk to LeisureBattery1::updateState()
 </UL>
@@ -2498,6 +2498,14 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[16f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GrayWater1::GrayWater1(short)
 <LI><a href="#[16d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FreshWater1::FreshWater1(short)
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InternalLigths::setOff()
+<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InternalLigths::setOn()
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GrayWater1::setOff()
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GrayWater1::setOn()
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Fridge::setOff()
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Fridge::setOn()
+<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FreshWater1::setOff()
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FreshWater1::setOn()
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FloorHeating::setOff()
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FloorHeating::setOn()
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ExternalLigths::setOff()
@@ -2513,14 +2521,6 @@ Global Symbols
 <LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ligths1::setOn()
 <LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Inverter::setOff()
 <LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Inverter::setOn()
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InternalLigths::setOff()
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InternalLigths::setOn()
-<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GrayWater1::setOff()
-<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GrayWater1::setOn()
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Fridge::setOff()
-<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Fridge::setOn()
-<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FreshWater1::setOff()
-<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FreshWater1::setOn()
 </UL>
 
 <P><STRONG><a name="[190]"></a>Utils::setBits(unsigned short, unsigned short, short)</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, utils.o(.text._ZN5Utils7setBitsEtts))
@@ -2532,17 +2532,17 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memmove
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LeisureBattery1::processInfoFrame(unsigned char*)
+<BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Fuses::updateState()
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LeisureBattery1::processInfoFrame(unsigned char*)
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LeisureBattery1::updateState()
-<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Fuses::updateState()
 </UL>
 
 <P><STRONG><a name="[183]"></a>Errors::errorExists(short, short)</STRONG> (Thumb, 92 bytes, Stack size 16 bytes, errormanager.o(.text._ZN6Errors11errorExistsEss))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Errors::errorExists(short, short)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LeisureBattery1::processInfoFrame(unsigned char*)
+<BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Fuses::updateState()
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LeisureBattery1::processInfoFrame(unsigned char*)
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LeisureBattery1::updateState()
-<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Fuses::updateState()
 </UL>
 
 <P><STRONG><a name="[18e]"></a>Errors::getNumErrors()</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, errormanager.o(.text._ZN6Errors12getNumErrorsEv))
@@ -2560,9 +2560,9 @@ Global Symbols
 <LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memmove
 <LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;abort
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LeisureBattery1::processInfoFrame(unsigned char*)
+<BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Fuses::updateState()
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LeisureBattery1::processInfoFrame(unsigned char*)
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LeisureBattery1::updateState()
-<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Fuses::updateState()
 </UL>
 
 <P><STRONG><a name="[18f]"></a>Errors::getError()</STRONG> (Thumb, 206 bytes, Stack size 40 bytes, errormanager.o(.text._ZN6Errors8getErrorEv))
@@ -2838,9 +2838,9 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::addClient(LinClients*)
 <LI><a href="#[16c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CommunicationManager::addClients(Devices*)
 <LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initTopics()
+<LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::addError(short, short)
 <LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinClients::setIdInfo(unsigned char, unsigned char)
 <LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::getError()
-<LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::addError(short, short)
 </UL>
 
 <P><STRONG><a name="[a2]"></a>non-virtual thunk to LeisureBattery1::processInfoFrame(unsigned char*)</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, leisurebattery1.o(.text._ZThn12_N15LeisureBattery116processInfoFrameEPh))
@@ -2945,10 +2945,10 @@ Global Symbols
 <LI><a href="#[16c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CommunicationManager::addClients(Devices*)
 <LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initTopics()
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;std::__2::vector&lang;SystemDevices*, std::__2::allocator&lang;SystemDevices*&rang;&rang;::~vector__sub_object[abi:v16000]()
+<LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::addError(short, short)
 <LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinClients::setIdInfo(unsigned char, unsigned char)
 <LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::getError()
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;std::__2::vector&lang;errors, std::__2::allocator&lang;errors&rang;&rang;::~vector__sub_object[abi:v16000]()
-<LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::addError(short, short)
 </UL>
 
 <P><STRONG><a name="[113]"></a>operator new(unsigned int)</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, new.cpp.o(.text._Znwj))
@@ -2961,9 +2961,9 @@ Global Symbols
 <LI><a href="#[16c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CommunicationManager::addClients(Devices*)
 <LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initTopics()
 <LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Arvi_Setup
+<LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::addError(short, short)
 <LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinClients::setIdInfo(unsigned char, unsigned char)
 <LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::getError()
-<LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::addError(short, short)
 </UL>
 
 <P><STRONG><a name="[88]"></a>__cxa_pure_virtual</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, cxa_virtual.cpp.o(.text.__cxa_pure_virtual))
@@ -2973,7 +2973,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[19a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;abort_message
 </UL>
 <BR>[Address Reference Count : 2]<UL><LI> devices.o(.rodata._ZTV7Devices)
-<LI> airconditioner1.o(.rodata._ZTV13SystemDevices)
+<LI> drainvalve.o(.rodata._ZTV13SystemDevices)
 </UL>
 <P><STRONG><a name="[19a]"></a>abort_message</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, abort_message.cpp.o(.text.abort_message))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48 + Unknown Stack Size

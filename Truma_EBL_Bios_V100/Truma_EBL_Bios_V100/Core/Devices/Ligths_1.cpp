@@ -1,9 +1,16 @@
+/* *******************************************************************************
+ *       @file              Ligths_1.cpp
+ *       @expl              Proof of concept
+ *       @author            Andres Rivas
+ *       @coauthor
+ *       @Date:             15-02-2024
+ *       @copyright         Arvimarine Control Systems SL "ARVIKON"
+ *       @Programming mode  Survival Mode
+ ********************************************************************************/
+ 
 #include "Ligths_1.h"
-#include "InternalLigths.h"
 #include "Truma_EBL_Bios_V100.h"
 #include "Utils.h"
-#include "CanAttender.h"
-
 
 Ligths1::Ligths1(short _idTopic): Devices(_idTopic)
 {

@@ -1,3 +1,13 @@
+/* *******************************************************************************
+ *       @file              FreshWater_1.h
+ *       @expl              Proof of concept
+ *       @author            Andres Rivas
+ *       @coauthor
+ *       @Date:             15-02-2024
+ *       @copyright         Arvimarine Control Systems SL "ARVIKON"
+ *       @Programming mode  Survival Mode
+ ********************************************************************************/
+ 
 #ifndef _FRESHWATER1_H
 #define _FRESHWATER1_H
 

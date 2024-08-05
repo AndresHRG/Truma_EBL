@@ -1,9 +1,6 @@
 #include "Ligths_6.h"
 #include "Truma_EBL_Bios_V100.h"
 #include "Utils.h"
-#include "CanAttender.h"
-
-extern CanAttender* canInstance;
 
 Ligths6::Ligths6(short _idTopic): Devices(_idTopic)
 {

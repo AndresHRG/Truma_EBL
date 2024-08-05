@@ -3,8 +3,6 @@
 #include "InternalLigths.h"
 #include "Truma_EBL_Bios_V100.h"
 #include "Utils.h"
-#include "CanAttender.h"
-
 
 Ligths4::Ligths4(short _idTopic): Devices(_idTopic)
 {

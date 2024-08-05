@@ -1,16 +1,16 @@
+/* *******************************************************************************
+ *       @file              InternalLigths.cpp
+ *       @expl              Proof of concept
+ *       @author            Andres Rivas
+ *       @coauthor
+ *       @Date:             15-02-2024
+ *       @copyright         Arvimarine Control Systems SL "ARVIKON"
+ *       @Programming mode  Survival Mode
+ ********************************************************************************/
+ 
 #include "InternalLigths.h"
 #include "Truma_EBL_Bios_V100.h"
 #include "Utils.h"
-#include "CanAttender.h"
-#include "Ligths_1.h"
-#include "Ligths_2.h"
-#include "Ligths_3.h"
-#include "Ligths_4.h"
-#include "Ligths_5.h"
-#include "Ligths_10.h"
-
-extern CanAttender* canInstance;
-
 
 InternalLigths::InternalLigths(short _idTopic): Devices(_idTopic)
 {
