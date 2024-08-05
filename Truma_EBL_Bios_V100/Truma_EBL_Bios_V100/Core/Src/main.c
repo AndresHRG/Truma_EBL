@@ -90,7 +90,7 @@ void Bios_Init(void)
 	MX_DAC1_Init();
 	IO_Extender_Init();
 
-	HAL_ADC_Start_DMA(&hadc1, (uint32_t *)convAD1, 2);
+	//HAL_ADC_Start_DMA(&hadc1, (uint32_t *)convAD1, 2);
 	HAL_ADC_Start_DMA(&hadc2, (uint32_t *)convAD2, 9);
 
 	OnDRV

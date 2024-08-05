@@ -1,6 +1,6 @@
 /* *******************************************************************************
  *       @file              LinMaster.h
- *       @expl              Proof of concept
+ *       @expl              Truma EBL
  *       @author            Andres Rivas
  *       @coauthor
  *       @Date:             24-07-2024

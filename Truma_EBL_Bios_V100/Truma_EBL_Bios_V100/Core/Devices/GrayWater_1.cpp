@@ -1,6 +1,6 @@
 /* *******************************************************************************
  *       @file              GrayWater1.cpp
- *       @expl              Proof of concept
+ *       @expl              Truma EBL
  *       @author            Andres Rivas
  *       @coauthor
  *       @Date:             15-02-2024

@@ -1,6 +1,6 @@
 /* *******************************************************************************
  *       @file              Fuses.h
- *       @expl              Proof of concept
+ *       @expl              Truma EBL
  *       @author            Andres Rivas
  *       @coauthor
  *       @Date:             15-02-2024
@@ -13,18 +13,29 @@
 
 #include "Devices.h"
 #include "SystemDevices.h"
+#include "Truma_EBL_Bios_V100.h"
+#include <vector>
 
 #define FUSE_OK 0
 #define FUSE_KO 1
+
+typedef struct
+{
+	uint8_t fuse;
+	uint8_t idFuse;
+	
+} FUSES;
 
 class Fuses : public Devices, public SystemDevices
 {
 private:
     unsigned long long expirationTime;
     int state;
+		std::vector<FUSES> fuses; 
 public:
     Fuses(short _idTopic);
-
+		
+		void addFuses(FUSES fuse);
     void setOn();
     void setOff();
     void updateState();

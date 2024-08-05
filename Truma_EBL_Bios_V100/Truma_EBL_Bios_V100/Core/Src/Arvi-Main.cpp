@@ -227,8 +227,6 @@ void devicesState()
 
 void Arvi_Main(void)
 {
-	devicesState();
-	
 	if((updateTimeInfoFrames < GetMilliSec()))
 	{
 		linInstance->updateInfoFrames();
@@ -240,5 +238,7 @@ void Arvi_Main(void)
 		checkVariant();
 		checkVariantTime = GetMilliSec() + 1000;
 	}
+	
+	devicesState();
 }
 
