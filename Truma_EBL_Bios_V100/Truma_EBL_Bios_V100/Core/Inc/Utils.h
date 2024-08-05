@@ -1,3 +1,13 @@
+/* *******************************************************************************
+ *       @file              Utils.h
+ *       @expl              Proof of concept
+ *       @author            Andres Rivas
+ *       @coauthor
+ *       @Date:             15-02-2024
+ *       @copyright         Arvimarine Control Systems SL "ARVIKON"
+ *       @Programming mode  Survival Mode
+ ********************************************************************************/
+ 
 #ifndef __UTILS_H
 #define __UTILS_H
 
