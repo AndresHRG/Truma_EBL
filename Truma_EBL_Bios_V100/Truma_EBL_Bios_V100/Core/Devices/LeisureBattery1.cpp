@@ -57,7 +57,7 @@ void LeisureBattery1::updateState()
   if(expirationTime > GetMilliSec())
 		return;
 	
-	expirationTime = GetMilliSec() + 1500;
+	expirationTime = GetMilliSec() + 1000;
 	
 	if(!variant)
 	{
@@ -86,6 +86,7 @@ void LeisureBattery1::updateState()
 	{
 		
 		mAmps = ArviGet_mA(DRV)/10;
+		mAmps -= 163830;
 		volts = ArviGet_mV(BAT_2)/100;
 		soc = -1;
 		
@@ -112,8 +113,18 @@ void LeisureBattery1::processInfoFrame(uint8_t* frame)
 		volts = frame[0] +(frame[1] << 8);
 		volts /= 10;
 		
-		mAmps = frame[2] +(frame[3] << 8);
-		mAmps /= 10;
+		
+		uint8_t sign = ((frame[3] & 0x80) == 0x80) ? 1 : 0;
+		uint16_t lsbCurrent = frame[2];
+		uint16_t msbCurrent = (frame[3] & 0x7F) ;
+		
+		mAmps =  ((lsbCurrent + (msbCurrent << 8))*10.0);
+		mAmps -= 163830;
+		
+		if(sign == 0)
+		{
+			mAmps *=-1;
+		}
 		
 		soc = frame[5] * 2;
 	}
@@ -123,15 +134,15 @@ void LeisureBattery1::processInfoFrame(uint8_t* frame)
 		{
 			case frame1:
 			{
-				volts =  frame[0];
+				volts =  ArviGet_mV(BAT_2)/100;//frame[0];
 				break;
 			}
 			case frame2:
 			{
 				soc = frame[0];
 			
-				mAmps = (frame[1] +(frame[2] << 8));
-				mAmps -= 32767;
+				mAmps = (frame[1] +(frame[2] << 8))*100;
+				mAmps -= 1638300;
 				mAmps/= 10;
 				break;
 			}

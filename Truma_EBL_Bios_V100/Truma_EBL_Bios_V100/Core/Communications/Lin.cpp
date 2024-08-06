@@ -471,7 +471,7 @@ void Lin::updateInfoFrames()
 		short volts = batteryInstance->volts;//this->getTopicState(36);
 		infoLeisure1Batt[1] |= Utils::setBits(4, 7, volts & 0x000F);
 		infoLeisure1Batt[2] = (volts >> 4);
-		int mAmp = 163830 - batteryInstance->mAmps; //(163830 - ArviGet_mA(DRV)/10);
+		int mAmp = (int)batteryInstance->mAmps; //(163830 - ArviGet_mA(DRV)/10);
 
 		infoLeisure1Batt[3] = mAmp & 0x00FF;
 		infoLeisure1Batt[4] = (mAmp & 0xFF00) >> 8;

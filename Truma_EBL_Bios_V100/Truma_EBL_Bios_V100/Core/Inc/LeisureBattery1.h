@@ -30,7 +30,7 @@ public:
 		void processInfoFrame(uint8_t* frame);
 
 		int state;
-		int mAmps;
+		float mAmps;
 		int timeRemaining;
 		int soc;
 		int volts;
