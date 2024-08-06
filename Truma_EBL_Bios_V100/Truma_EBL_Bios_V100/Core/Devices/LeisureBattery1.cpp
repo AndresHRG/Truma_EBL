@@ -29,9 +29,9 @@ LeisureBattery1::LeisureBattery1(short _idTopic): Devices(_idTopic), LinClients(
 		timeRemaining = 0;
 		soc = 0;
 		volts = 0;
-	
+		this->numberFrameInfo = 1;
 		checkVariant();
-	
+		
 		if(!variant3)
 		{
 			this->setIdInfo(R_SUPER_VOLT, 8);
@@ -57,7 +57,7 @@ void LeisureBattery1::updateState()
   if(expirationTime > GetMilliSec())
 		return;
 	
-	expirationTime = GetMilliSec() + 1000;
+	expirationTime = GetMilliSec() + 2000;
 	
 	if(!variant)
 	{
@@ -72,10 +72,12 @@ void LeisureBattery1::updateState()
 				case frame1:
 				{
 					linMasterInstance->sendInfoFrame(R_LEAB_1);
+					break;
 				}
 				case frame2:
 				{
 					linMasterInstance->sendInfoFrame(R_LEAB_2);
+					break;
 				}
 				default:
 					break;
@@ -84,7 +86,6 @@ void LeisureBattery1::updateState()
 	}
 	else
 	{
-		
 		mAmps = ArviGet_mA(DRV)/10;
 		mAmps -= 163830;
 		volts = ArviGet_mV(BAT_2)/100;
@@ -134,7 +135,7 @@ void LeisureBattery1::processInfoFrame(uint8_t* frame)
 		{
 			case frame1:
 			{
-				volts =  ArviGet_mV(BAT_2)/100;//frame[0];
+				volts =  frame[0];
 				break;
 			}
 			case frame2:

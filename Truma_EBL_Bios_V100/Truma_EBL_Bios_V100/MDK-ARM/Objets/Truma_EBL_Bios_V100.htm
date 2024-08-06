@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objets\Truma_EBL_Bios_V100.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objets\Truma_EBL_Bios_V100.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Tue Aug  6 12:49:28 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Tue Aug  6 13:36:46 2024
 <BR><P>
 <H3>Maximum Stack Usage =        252 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1030,7 +1030,6 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;non-virtual thunk to EngineBattery1::updateState()
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EngineBattery1::updateState()
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LeisureBattery1::processInfoFrame(unsigned char*)
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LeisureBattery1::updateState()
 </UL>
 
@@ -2299,7 +2298,7 @@ Global Symbols
 
 <P><STRONG><a name="[1e7]"></a>InternalLigths::InternalLigths__sub_object(short)</STRONG> (Thumb, 50 bytes, Stack size 8 bytes, internalligths.o(.text._ZN14InternalLigthsC2Es), UNUSED)
 
-<P><STRONG><a name="[9f]"></a>LeisureBattery1::updateState()</STRONG> (Thumb, 268 bytes, Stack size 16 bytes, leisurebattery1.o(.text._ZN15LeisureBattery111updateStateEv))
+<P><STRONG><a name="[9f]"></a>LeisureBattery1::updateState()</STRONG> (Thumb, 280 bytes, Stack size 16 bytes, leisurebattery1.o(.text._ZN15LeisureBattery111updateStateEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112 + Unknown Stack Size
 <LI>Call Chain = LeisureBattery1::updateState() &rArr; Errors::addError(short, short) &rArr; operator new(unsigned int) &rArr; malloc &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free
 </UL>
@@ -2321,12 +2320,11 @@ Global Symbols
 <P><STRONG><a name="[9d]"></a>LeisureBattery1::topicReceived(unsigned char*)</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, leisurebattery1.o(.text._ZN15LeisureBattery113topicReceivedEPh))
 <BR>[Address Reference Count : 1]<UL><LI> leisurebattery1.o(.rodata._ZTV15LeisureBattery1)
 </UL>
-<P><STRONG><a name="[a0]"></a>LeisureBattery1::processInfoFrame(unsigned char*)</STRONG> (Thumb, 260 bytes, Stack size 16 bytes, leisurebattery1.o(.text._ZN15LeisureBattery116processInfoFrameEPh))
+<P><STRONG><a name="[a0]"></a>LeisureBattery1::processInfoFrame(unsigned char*)</STRONG> (Thumb, 232 bytes, Stack size 16 bytes, leisurebattery1.o(.text._ZN15LeisureBattery116processInfoFrameEPh))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112 + Unknown Stack Size
 <LI>Call Chain = LeisureBattery1::processInfoFrame(unsigned char*) &rArr; Errors::addError(short, short) &rArr; operator new(unsigned int) &rArr; malloc &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free
 </UL>
-<BR>[Calls]<UL><LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ArviGet_mV
-<LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::cleanError(short, short)
+<BR>[Calls]<UL><LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::cleanError(short, short)
 <LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::errorExists(short, short)
 <LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::addError(short, short)
 <LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
@@ -2343,7 +2341,7 @@ Global Symbols
 <P><STRONG><a name="[9c]"></a>LeisureBattery1::setOff()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, leisurebattery1.o(.text._ZN15LeisureBattery16setOffEv))
 <BR>[Address Reference Count : 1]<UL><LI> leisurebattery1.o(.rodata._ZTV15LeisureBattery1)
 </UL>
-<P><STRONG><a name="[176]"></a>LeisureBattery1::LeisureBattery1(short)</STRONG> (Thumb, 118 bytes, Stack size 16 bytes, leisurebattery1.o(.text._ZN15LeisureBattery1C2Es))
+<P><STRONG><a name="[176]"></a>LeisureBattery1::LeisureBattery1(short)</STRONG> (Thumb, 124 bytes, Stack size 16 bytes, leisurebattery1.o(.text._ZN15LeisureBattery1C2Es))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112 + Unknown Stack Size
 <LI>Call Chain = LeisureBattery1::LeisureBattery1(short) &rArr; LinClients::setIdInfo(unsigned char, unsigned char) &rArr; operator new(unsigned int) &rArr; malloc &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free
 </UL>
@@ -2355,7 +2353,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initTopics()
 </UL>
 
-<P><STRONG><a name="[1e8]"></a>LeisureBattery1::LeisureBattery1__sub_object(short)</STRONG> (Thumb, 118 bytes, Stack size 16 bytes, leisurebattery1.o(.text._ZN15LeisureBattery1C2Es), UNUSED)
+<P><STRONG><a name="[1e8]"></a>LeisureBattery1::LeisureBattery1__sub_object(short)</STRONG> (Thumb, 124 bytes, Stack size 16 bytes, leisurebattery1.o(.text._ZN15LeisureBattery1C2Es), UNUSED)
 
 <P><STRONG><a name="[a7]"></a>SolarRegulator1::updateState()</STRONG> (Thumb, 108 bytes, Stack size 16 bytes, solarregulator1.o(.text._ZN15SolarRegulator111updateStateEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = SolarRegulator1::updateState() &rArr; LinMaster::sendInfoFrame(unsigned char) &rArr; Tx_UART3 &rArr; HAL_UART_Transmit
