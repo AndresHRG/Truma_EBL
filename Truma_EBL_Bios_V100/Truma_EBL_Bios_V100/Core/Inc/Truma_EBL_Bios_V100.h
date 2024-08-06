@@ -120,6 +120,7 @@ void Arvi_Main(void);
 
 extern bool variant;
 extern bool variant3;
+extern bool variant4;
 extern void checkVariant();
 
 

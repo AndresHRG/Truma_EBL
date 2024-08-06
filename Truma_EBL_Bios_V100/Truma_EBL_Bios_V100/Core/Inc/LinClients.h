@@ -37,7 +37,7 @@ public:
 
     uint8_t getIdControl();
     bool verifyIdInfo(uint8_t idInfo);
-		virtual void processInfoFrame(uint8_t* frame);
+		virtual void processInfoFrame(uint8_t* frame) = 0;
 		uint8_t getSizeInfoFrame(uint8_t idInfo);
 		uint8_t getNumberFramesInfo();
 

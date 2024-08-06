@@ -40,6 +40,7 @@ uint64_t updateTimeInfoFrames = 0;
 uint64_t  checkVariantTime = 0;
 bool variant;
 bool variant3;
+bool variant4;
 
 std::vector<SystemDevices*> devices;
 
@@ -197,6 +198,7 @@ void checkVariant()
 {
 	variant = false;
 	variant3 = false;
+	variant4 = false;
 	
 	ScanMultiplexores();
 	
@@ -207,6 +209,13 @@ void checkVariant()
 	{
 		variant3 = true;
 		variant = false;
+	}
+	
+	if(ArviGet_AD(BLK5_1) >  255)
+	{
+		variant4 = true;
+		variant3 = false;
+		variant = true;
 	}
 }
 

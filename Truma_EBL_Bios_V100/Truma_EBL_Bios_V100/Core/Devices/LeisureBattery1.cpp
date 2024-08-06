@@ -29,7 +29,6 @@ LeisureBattery1::LeisureBattery1(short _idTopic): Devices(_idTopic), LinClients(
 		timeRemaining = 0;
 		soc = 0;
 		volts = 0;
-		this->numberFrameInfo = 1;
 		checkVariant();
 		
 		if(!variant3)
@@ -41,7 +40,6 @@ LeisureBattery1::LeisureBattery1(short _idTopic): Devices(_idTopic), LinClients(
 			this->setIdInfo(R_LEAB_1, 8);
 			this->setIdInfo(R_LEAB_2, 7);
 		}
-		
 }
 
 void LeisureBattery1::setOn()
@@ -59,7 +57,7 @@ void LeisureBattery1::updateState()
 	
 	expirationTime = GetMilliSec() + 2000;
 	
-	if(!variant)
+	if(!variant || variant4)
 	{
 		if(!variant3)
 		{

@@ -101,3 +101,8 @@ int Inverter::getTopicState()
 {
     return state;
 }
+
+void Inverter::processInfoFrame(uint8_t* frame)
+{
+
+}

@@ -58,11 +58,6 @@ bool LinClients::verifyIdInfo(uint8_t idInfo)
     return result;
 }
 
-void LinClients::processInfoFrame(uint8_t* frame)
-{
-	//de momento dejamos sin implementacion.
-}
-
 uint8_t LinClients::getSizeInfoFrame(uint8_t idInfo)
 {
 	for(int i = 0; i < frameInfo.size(); i++)

@@ -31,7 +31,8 @@ public:
     void setOff();
     void updateState();
     void topicReceived(uint8_t* topic);
-    int getTopicState();
+    int  getTopicState();
+		void processInfoFrame(uint8_t* frame);
 };
 
 #endif
