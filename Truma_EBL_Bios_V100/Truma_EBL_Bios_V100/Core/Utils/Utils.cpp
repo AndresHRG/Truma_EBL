@@ -217,9 +217,24 @@ int round_float_to_nearest(float num)
 
 void delay_ms(short mSeg)
 {
-	unsigned long long time = GetMilliSec();
+	uint64_t time = GetMilliSec();
 	
 	while((time + mSeg) > GetMilliSec());
+}
+
+bool compareAnalog(long oldValue, long newValue, short rate)
+{
+    bool result = false;
+		int aux = (oldValue - newValue);
+		
+		if(aux < 0)
+			aux *=-1; 
+			
+    if(aux > rate) // si la diferencia de valores es mayor al rate devolvemos true sino false
+    {
+        result = true;
+    }
+    return result;
 }
 
 }

@@ -12,6 +12,8 @@
 #include "Utils.h"
 #include "ErrorManager.h"
 
+#define FUSE_SOS 1
+
 Fuses::Fuses(short _idTopic): Devices(_idTopic)
 {
     expirationTime = 0;
@@ -100,7 +102,7 @@ void Fuses::updateState()
 		uint8_t fuseState = ArviGet(fuse.fuse);
 		uint8_t state = FUSE_KO;
 		
-		if(fuse.idFuse == 1)
+		if(fuse.idFuse == FUSE_SOS)
 		{
 			state = FUSE_OK;
 		}
@@ -115,7 +117,6 @@ void Fuses::updateState()
 
 void Fuses::topicReceived(uint8_t* topic)
 {
-
 }
 
 int Fuses::getTopicState()

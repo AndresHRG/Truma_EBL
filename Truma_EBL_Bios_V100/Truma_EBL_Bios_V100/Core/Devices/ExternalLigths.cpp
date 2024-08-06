@@ -17,6 +17,7 @@ ExternalLigths::ExternalLigths(short _idTopic): Devices(_idTopic)
     expirationTime = 0;
     state = 0;
 		stateChange = false;
+		adcValue = ArviGet_AD(BLK5_4);
 }
 
 void ExternalLigths::setOn()
@@ -31,7 +32,26 @@ void ExternalLigths::setOff()
 
 void ExternalLigths::updateState()
 {
-    return;//Pendiente de Implementacion 
+	if(expirationTime > GetMilliSec())
+		return;
+	
+	expirationTime = GetMilliSec() + 60;
+	
+	if(Utils::compareAnalog(ArviGet_AD(BLK5_4), adcValue, 255))
+	{
+		adcValue = ArviGet_AD(BLK5_4);
+		
+		if(state == 0)
+		{
+			setOn();
+			state = 1;
+		}
+		else
+		{
+			setOff();
+			state = 0;
+		}
+	}
 }
 
 void ExternalLigths::topicReceived(uint8_t* topic)

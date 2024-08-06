@@ -18,7 +18,7 @@
 class LeisureBattery1 : public Devices, public SystemDevices, public LinClients 
 {
 private:
-    unsigned long long expirationTime;
+    uint64_t expirationTime;
 public:
     LeisureBattery1(short _idTopic);
 

@@ -17,8 +17,8 @@
 class GrayWater1 : public Devices, public SystemDevices
 {
 private:
-    unsigned long long expirationTime;
-		unsigned long long powerTime;
+    uint64_t expirationTime;
+		uint64_t powerTime;
     int state;
 		float levelGW;
 		int counterGW;

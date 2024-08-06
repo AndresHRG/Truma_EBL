@@ -17,9 +17,11 @@
 class ExternalLigths : public Devices, public SystemDevices
 {
 private:
-    unsigned long long expirationTime;
+    uint64_t expirationTime;
     int state;
 		bool stateChange;
+		uint16_t adcValue;
+
 public:
     ExternalLigths(short _idTopic);
 

@@ -17,7 +17,7 @@
 class DrainValve : public Devices, public SystemDevices
 {
 private:
-    unsigned long long expirationTime;
+    uint64_t expirationTime;
     int state;
 public:
     DrainValve(short _idTopic);

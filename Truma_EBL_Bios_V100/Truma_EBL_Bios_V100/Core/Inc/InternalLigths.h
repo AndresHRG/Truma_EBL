@@ -17,9 +17,10 @@
 class InternalLigths : public Devices, public SystemDevices
 {
 private:
-    unsigned long long expirationTime;
+    uint64_t expirationTime;
     int state;
 		bool stateChange;
+		uint16_t adcValue;
 public:
     InternalLigths(short _idTopic);
 

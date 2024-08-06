@@ -17,7 +17,7 @@
 class EmptyingValve : public Devices, public SystemDevices
 {
 private:
-    unsigned long long expirationTime;
+    uint64_t expirationTime;
     int state;
 		bool stateChange;
 public:

@@ -17,6 +17,7 @@ Ligths1::Ligths1(short _idTopic): Devices(_idTopic)
     expirationTime = 0;
     state = 0;
 		stateChange = false;
+		adcValue = ArviGet_AD(BLK5_2);
 }
 
 void Ligths1::setOn()
@@ -31,7 +32,26 @@ void Ligths1::setOff()
 
 void Ligths1::updateState()
 {
-    //Pendiente de Implementacion 
+	if(expirationTime > GetMilliSec())
+		return;
+	
+	expirationTime = GetMilliSec() + 50;
+	
+	if(Utils::compareAnalog(ArviGet_AD(BLK5_2), adcValue, 255))
+	{
+		adcValue = ArviGet_AD(BLK5_2);
+		
+		if(state == 0)
+		{
+			setOn();
+			state = 1;
+		}
+		else
+		{
+			setOff();
+			state = 0;
+		}
+	}
 }
 
 void Ligths1::topicReceived(uint8_t* topic)

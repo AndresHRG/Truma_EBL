@@ -17,7 +17,7 @@
 class Multimedia : public Devices, public SystemDevices
 {
 private:
-    unsigned long long expirationTime;
+    uint64_t expirationTime;
     int state;
 public:
     Multimedia(short _idTopic);

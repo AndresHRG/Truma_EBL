@@ -27,6 +27,7 @@ namespace Utils
 	byte setBits(unsigned short bitInit, unsigned short bitEnd, short value);
 	int round_float_to_nearest(float num);
 	void delay_ms(short mSeg);
+	bool compareAnalog(long oldValue, long newValue, short rate);
 }
 
 #endif /* __UTILS_H*/

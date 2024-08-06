@@ -29,7 +29,7 @@ typedef struct
 class Fuses : public Devices, public SystemDevices
 {
 private:
-    unsigned long long expirationTime;
+    uint64_t expirationTime;
     int state;
 		std::vector<FUSES> fuses; 
 public:

@@ -19,7 +19,7 @@
 class EngineBattery1 : public Devices, public SystemDevices
 {
 private:
-    unsigned long long expirationTime;
+    uint64_t expirationTime;
     int state;
 public:
     EngineBattery1(short _idTopic);

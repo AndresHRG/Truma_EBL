@@ -17,6 +17,7 @@ InternalLigths::InternalLigths(short _idTopic): Devices(_idTopic)
     expirationTime = 0;
     state = 0;
 		stateChange = false;
+		adcValue = ArviGet_AD(BLK5_3);
 }
 
 void InternalLigths::setOn()
@@ -39,6 +40,27 @@ void InternalLigths::setOff()
 
 void InternalLigths::updateState()
 {
+	if(expirationTime > GetMilliSec())
+		return;
+	
+	expirationTime = GetMilliSec() + 40;
+	
+	if(Utils::compareAnalog(ArviGet_AD(BLK5_3), adcValue, 255))
+	{
+		adcValue = ArviGet_AD(BLK5_3);
+		
+		if(state == 0)
+		{
+			setOn();
+			state = 1;
+		}
+		else
+		{
+			setOff();
+			state = 0;
+		}
+	}
+	
 }
 
 void InternalLigths::topicReceived(uint8_t* topic)

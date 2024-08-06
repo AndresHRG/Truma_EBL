@@ -18,7 +18,7 @@
 class Inverter : public Devices, public SystemDevices, public LinClients
 {
 private:
-    unsigned long long expirationTime;
+    uint64_t expirationTime;
     int state;
 		int noResponse;
 		bool stateChange;

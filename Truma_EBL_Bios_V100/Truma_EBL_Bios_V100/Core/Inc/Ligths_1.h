@@ -17,9 +17,11 @@
 class Ligths1 : public Devices, public SystemDevices
 {
 private:
-    unsigned long long expirationTime;
+    uint64_t expirationTime;
     int state;
 		bool stateChange;
+		uint16_t adcValue;
+
 public:
     Ligths1(short _idTopic);
 
