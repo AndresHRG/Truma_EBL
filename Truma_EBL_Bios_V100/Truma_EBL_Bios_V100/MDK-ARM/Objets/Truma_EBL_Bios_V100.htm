@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objets\Truma_EBL_Bios_V100.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objets\Truma_EBL_Bios_V100.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Wed Aug  7 09:22:15 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Wed Aug  7 09:40:10 2024
 <BR><P>
 <H3>Maximum Stack Usage =        252 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1407,7 +1407,7 @@ Global Symbols
 
 <P><STRONG><a name="[19b]"></a>HAL_LIN_SendBreak</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, stm32g4xx_hal_uart.o(.text.HAL_LIN_SendBreak))
 <BR><BR>[Called By]<UL><LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::sendInfoFrame(unsigned char)
-<LI><a href="#[196]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::sendControlFrame(unsigned char*, unsigned char)
+<LI><a href="#[197]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::sendControlFrame(unsigned char*, unsigned char)
 </UL>
 
 <P><STRONG><a name="[13f]"></a>HAL_MspInit</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, stm32g4xx_hal_msp.o(.text.HAL_MspInit))
@@ -1754,7 +1754,7 @@ Global Symbols
 <LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LIN_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Bios_Init
-<LI><a href="#[196]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::sendControlFrame(unsigned char*, unsigned char)
+<LI><a href="#[197]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::sendControlFrame(unsigned char*, unsigned char)
 </UL>
 
 <P><STRONG><a name="[3]"></a>MemManage_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32g4xx_it.o(.text.MemManage_Handler))
@@ -1833,7 +1833,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[15a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Transmit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::sendInfoFrame(unsigned char)
-<LI><a href="#[196]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::sendControlFrame(unsigned char*, unsigned char)
+<LI><a href="#[197]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::sendControlFrame(unsigned char*, unsigned char)
 </UL>
 
 <P><STRONG><a name="[144]"></a>UART_AdvFeatureConfig</STRONG> (Thumb, 230 bytes, Stack size 8 bytes, stm32g4xx_hal_uart.o(.text.UART_AdvFeatureConfig))
@@ -2731,12 +2731,12 @@ Global Symbols
 <P><STRONG><a name="[bf]"></a>Inverter::getTopicState()</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, inverter.o(.text._ZN8Inverter13getTopicStateEv))
 <BR>[Address Reference Count : 1]<UL><LI> inverter.o(.rodata._ZTV8Inverter)
 </UL>
-<P><STRONG><a name="[be]"></a>Inverter::topicReceived(unsigned char*)</STRONG> (Thumb, 202 bytes, Stack size 24 bytes, inverter.o(.text._ZN8Inverter13topicReceivedEPh))
+<P><STRONG><a name="[be]"></a>Inverter::topicReceived(unsigned char*)</STRONG> (Thumb, 148 bytes, Stack size 24 bytes, inverter.o(.text._ZN8Inverter13topicReceivedEPh))
 <BR><BR>[Stack]<UL><LI>Max Depth = 236 + Unknown Stack Size
 <LI>Call Chain = Inverter::topicReceived(unsigned char*) &rArr; LinMaster::sendControlFrame(unsigned char*, unsigned char) &rArr; MX_USART3_UART_Init &rArr; HAL_LIN_Init &rArr; HAL_UART_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[196]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::sendControlFrame(unsigned char*, unsigned char)
-<LI><a href="#[197]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::calculateCheckSum(unsigned char*, short)
+<BR>[Calls]<UL><LI><a href="#[197]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::sendControlFrame(unsigned char*, unsigned char)
+<LI><a href="#[196]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::calculateCheckSum(unsigned char*, short)
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> inverter.o(.rodata._ZTV8Inverter)
 </UL>
@@ -2790,7 +2790,7 @@ Global Symbols
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LeisureBattery1::updateState()
 </UL>
 
-<P><STRONG><a name="[196]"></a>LinMaster::sendControlFrame(unsigned char*, unsigned char)</STRONG> (Thumb, 60 bytes, Stack size 24 bytes, linmaster.o(.text._ZN9LinMaster16sendControlFrameEPhh))
+<P><STRONG><a name="[197]"></a>LinMaster::sendControlFrame(unsigned char*, unsigned char)</STRONG> (Thumb, 60 bytes, Stack size 24 bytes, linmaster.o(.text._ZN9LinMaster16sendControlFrameEPhh))
 <BR><BR>[Stack]<UL><LI>Max Depth = 212 + Unknown Stack Size
 <LI>Call Chain = LinMaster::sendControlFrame(unsigned char*, unsigned char) &rArr; MX_USART3_UART_Init &rArr; HAL_LIN_Init &rArr; HAL_UART_MspInit &rArr; HAL_GPIO_Init
 </UL>
@@ -2801,7 +2801,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Inverter::topicReceived(unsigned char*)
 </UL>
 
-<P><STRONG><a name="[197]"></a>LinMaster::calculateCheckSum(unsigned char*, short)</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, linmaster.o(.text._ZN9LinMaster17calculateCheckSumEPhs))
+<P><STRONG><a name="[196]"></a>LinMaster::calculateCheckSum(unsigned char*, short)</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, linmaster.o(.text._ZN9LinMaster17calculateCheckSumEPhs))
 <BR><BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Inverter::topicReceived(unsigned char*)
 </UL>
 

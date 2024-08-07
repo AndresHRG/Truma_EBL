@@ -44,69 +44,44 @@ void Inverter::updateState()
 
 void Inverter::topicReceived(uint8_t* topic)
 {
+	uint8_t action = on;
+	
 	if(topic[1] != ignore)
 	{
 		if(topic[1] == off)
+			action = off;
+
+		switch(variant)
 		{
-			switch(variant)
+			case 1:
 			{
-				case 1:
-				{
-					inverter[6] = 0x00;
-					inverter[9] = linMasterInstance->calculateCheckSum(inverter, 8);//CRC
-					linMasterInstance->sendControlFrame(inverter, SIZE_BUFFER);
-					break;
-				}
-				case 2:
-				case 4:
-				{
+				inverter[6] = action;
+				inverter[9] = linMasterInstance->calculateCheckSum(inverter, 8);//CRC
+				linMasterInstance->sendControlFrame(inverter, SIZE_BUFFER);
+				break;
+			}
+			case 2:
+			case 4:
+			{
+				if(action == off)
 					setOff();
-					break;
-				}
-				case 3:
-				{
-					inverter[1] = 0x00;
-					inverter[2] = 0x63;//CRC
-					linMasterInstance->sendControlFrame(inverter, 3);
-					break;
-				}
-				default:
-					break;
-			
-			}
-			
-			state = 0;	
-		}
-		else
-		{
-			switch(variant)
-			{
-				case 1:
-				{
-					inverter[6] = 0x01;
-					inverter[9] = linMasterInstance->calculateCheckSum(inverter, 8);//CRC
-					linMasterInstance->sendControlFrame(inverter, SIZE_BUFFER);
-					break;
-				}
-				case 2:
-				case 4:
-				{
+				else
 					setOn();
-					break;
-				}
-				case 3:
-				{
-					inverter[1] = 0x01;
-					inverter[2] = 0x63;//CRC
-					linMasterInstance->sendControlFrame(inverter, 3);
-					break;
-				}
-				default:
-					break;
-			
+				break;
 			}
-			state = 1;
+			case 3:
+			{
+				inverter[1] = action;
+				inverter[2] = (action == off) ? 0x63 : 0x62;//CRC
+				linMasterInstance->sendControlFrame(inverter, 3);
+				break;
+			}
+			default:
+				break;
+		
 		}
+		
+		state = action;		
 	}
 }
 

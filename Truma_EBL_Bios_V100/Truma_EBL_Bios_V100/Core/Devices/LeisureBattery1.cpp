@@ -84,6 +84,7 @@ void LeisureBattery1::updateState()
 				Errors::addError(4,71);
 			else if(Errors::errorExists(4,71) && (ArviGet_mV(BAT_2) >= 11500))
 				Errors::cleanError(4,71);
+			
 			break;
 		}
 		case 3://leab
