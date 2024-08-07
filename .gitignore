@@ -58,15 +58,11 @@
 # End of https://www.toptal.com/developers/gitignore/api/keil
 
 .vscode/*
-MDK-ARM/Objets/*.crf
+Truma_EBL_Bios_V100/MDK-ARM/Objets/*.crf
 
-MDK-ARM/Objets/*.axf
-MDK-ARM/Objets/*.htm
+Truma_EBL_Bios_V100/MDK-ARM/Objets/*.axf
+Truma_EBL_Bios_V100/MDK-ARM/Objets/*.htm
 *.bin
 *.lock
-MDK-ARM/.vscode/c_cpp_properties.json
-MDK-ARM/.vscode/keil-assistant.log
-MDK-ARM/.vscode/uv4.log
-MDK-ARM/distribucion/arvicore.bin
-MDK-ARM/Replace-V2.0/coreDebug.axf
-MDK-ARM/Replace-V2.0/coreDebug.htm
+Truma_EBL_Bios_V100/MDK-ARM/.vscode/c_cpp_properties.json
+Truma_EBL_Bios_V100/MDK-ARM/.vscode/keil-assistant.log

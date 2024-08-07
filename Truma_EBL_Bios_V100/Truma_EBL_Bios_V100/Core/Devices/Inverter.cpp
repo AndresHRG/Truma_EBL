@@ -58,6 +58,7 @@ void Inverter::topicReceived(uint8_t* topic)
 				inverter[6] = action;
 				inverter[9] = linMasterInstance->calculateCheckSum(inverter, 8);//CRC
 				linMasterInstance->sendControlFrame(inverter, SIZE_BUFFER);
+				
 				break;
 			}
 			case 2:
@@ -75,6 +76,7 @@ void Inverter::topicReceived(uint8_t* topic)
 				inverter[1] = action;
 				inverter[2] = (action == off) ? 0x63 : 0x62;//CRC
 				linMasterInstance->sendControlFrame(inverter, 3);
+				
 				break;
 			}
 			default:
