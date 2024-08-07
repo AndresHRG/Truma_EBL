@@ -1126,11 +1126,6 @@
               <FilePath>..\Core\Devices\Devices.cpp</FilePath>
             </File>
             <File>
-              <FileName>DrainValve.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\Core\Devices\DrainValve.cpp</FilePath>
-            </File>
-            <File>
               <FileName>EmptyingValve.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\Core\Devices\EmptyingValve.cpp</FilePath>

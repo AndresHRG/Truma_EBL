@@ -97,7 +97,7 @@ void Fuses::updateState()
 	
 	expirationTime = GetMilliSec() + 100;
 	
-	for(const auto fuse: fuses)
+	for(const auto& fuse: fuses)
 	{
 		uint8_t fuseState = ArviGet(fuse.fuse);
 		uint8_t state = FUSE_KO;

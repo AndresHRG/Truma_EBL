@@ -17,6 +17,7 @@
 
 extern LinMaster* linMasterInstance;
 extern Lin* linInstance;
+
 uint8_t readByteU1;
 uint8_t readByteU3;
 linStates linstate;

@@ -217,7 +217,7 @@ void Arvi_Setup(void)
 
 void devicesState()
 {
-	for(const auto device : devices)
+	for(const auto& device : devices)
 	{
 		device->updateState();
 	}
