@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objets\Truma_EBL_Bios_V100.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objets\Truma_EBL_Bios_V100.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Tue Aug  6 16:28:49 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6190004: Last Updated: Wed Aug  7 09:22:15 2024
 <BR><P>
 <H3>Maximum Stack Usage =        252 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -687,7 +687,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[183]"></a>__aeabi_memmove</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_memmove_v6.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::cleanError(short, short)
+<BR><BR>[Called By]<UL><LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::cleanError(short, short)
 <LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::addError(short, short)
 <LI><a href="#[195]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Fuses::addFuses(FUSES)
 <LI><a href="#[181]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinClients::setIdInfo(unsigned char, unsigned char)
@@ -1044,8 +1044,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Utils::ioDigitalWrite(IOParameters const&, short)
 </UL>
 
-<P><STRONG><a name="[10e]"></a>Arvi_Main</STRONG> (Thumb, 226 bytes, Stack size 24 bytes, arvi-main.o(.text.Arvi_Main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = Arvi_Main &rArr; Lin::updateInfoFrames() &rArr; CommunicationManager::getTopicState(unsigned char)
+<P><STRONG><a name="[10e]"></a>Arvi_Main</STRONG> (Thumb, 196 bytes, Stack size 16 bytes, arvi-main.o(.text.Arvi_Main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = Arvi_Main &rArr; Lin::updateInfoFrames() &rArr; CommunicationManager::getTopicState(unsigned char)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lin::updateInfoFrames()
 <LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetMilliSec
@@ -1055,8 +1055,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[113]"></a>Arvi_Setup</STRONG> (Thumb, 144 bytes, Stack size 16 bytes, arvi-main.o(.text.Arvi_Setup))
-<BR><BR>[Stack]<UL><LI>Max Depth = 200 + Unknown Stack Size
+<P><STRONG><a name="[113]"></a>Arvi_Setup</STRONG> (Thumb, 114 bytes, Stack size 8 bytes, arvi-main.o(.text.Arvi_Setup))
+<BR><BR>[Stack]<UL><LI>Max Depth = 192 + Unknown Stack Size
 <LI>Call Chain = Arvi_Setup &rArr; initTopics() &rArr; GrayWater1::GrayWater1(short) &rArr; Utils::ioDigitalWrite(IOParameters const&, short) &rArr; ArviSet &rArr; Write_IO_Expander &rArr; HAL_I2C_Mem_Write &rArr; I2C_WaitOnSTOPFlagUntilTimeout &rArr; I2C_IsErrorOccurred
 </UL>
 <BR>[Calls]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initTopics()
@@ -1406,7 +1406,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[19b]"></a>HAL_LIN_SendBreak</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, stm32g4xx_hal_uart.o(.text.HAL_LIN_SendBreak))
-<BR><BR>[Called By]<UL><LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::sendInfoFrame(unsigned char)
+<BR><BR>[Called By]<UL><LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::sendInfoFrame(unsigned char)
 <LI><a href="#[196]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::sendControlFrame(unsigned char*, unsigned char)
 </UL>
 
@@ -1832,7 +1832,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[15a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Transmit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::sendInfoFrame(unsigned char)
+<BR>[Called By]<UL><LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::sendInfoFrame(unsigned char)
 <LI><a href="#[196]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::sendControlFrame(unsigned char*, unsigned char)
 </UL>
 
@@ -1954,7 +1954,7 @@ Global Symbols
 <P><STRONG><a name="[6c]"></a>GrayWater1::getTopicState()</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, graywater_1.o(.text._ZN10GrayWater113getTopicStateEv))
 <BR>[Address Reference Count : 1]<UL><LI> graywater_1.o(.rodata._ZTV10GrayWater1)
 </UL>
-<P><STRONG><a name="[6b]"></a>GrayWater1::topicReceived(unsigned char*)</STRONG> (Thumb, 244 bytes, Stack size 8 bytes, graywater_1.o(.text._ZN10GrayWater113topicReceivedEPh))
+<P><STRONG><a name="[6b]"></a>GrayWater1::topicReceived(unsigned char*)</STRONG> (Thumb, 252 bytes, Stack size 8 bytes, graywater_1.o(.text._ZN10GrayWater113topicReceivedEPh))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = GrayWater1::topicReceived(unsigned char*) &rArr; Utils::ioDigitalRead(IOParameters const&)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetMilliSec
@@ -2071,7 +2071,7 @@ Global Symbols
 <P><STRONG><a name="[79]"></a>FreshWater1::getTopicState()</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, freshwater_1.o(.text._ZN11FreshWater113getTopicStateEv))
 <BR>[Address Reference Count : 1]<UL><LI> freshwater_1.o(.rodata._ZTV11FreshWater1)
 </UL>
-<P><STRONG><a name="[78]"></a>FreshWater1::topicReceived(unsigned char*)</STRONG> (Thumb, 244 bytes, Stack size 8 bytes, freshwater_1.o(.text._ZN11FreshWater113topicReceivedEPh))
+<P><STRONG><a name="[78]"></a>FreshWater1::topicReceived(unsigned char*)</STRONG> (Thumb, 252 bytes, Stack size 8 bytes, freshwater_1.o(.text._ZN11FreshWater113topicReceivedEPh))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = FreshWater1::topicReceived(unsigned char*) &rArr; Utils::ioDigitalRead(IOParameters const&)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetMilliSec
@@ -2293,17 +2293,17 @@ Global Symbols
 
 <P><STRONG><a name="[1e7]"></a>InternalLigths::InternalLigths__sub_object(short)</STRONG> (Thumb, 50 bytes, Stack size 8 bytes, internalligths.o(.text._ZN14InternalLigthsC2Es), UNUSED)
 
-<P><STRONG><a name="[9e]"></a>LeisureBattery1::updateState()</STRONG> (Thumb, 292 bytes, Stack size 16 bytes, leisurebattery1.o(.text._ZN15LeisureBattery111updateStateEv))
+<P><STRONG><a name="[9e]"></a>LeisureBattery1::updateState()</STRONG> (Thumb, 280 bytes, Stack size 16 bytes, leisurebattery1.o(.text._ZN15LeisureBattery111updateStateEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112 + Unknown Stack Size
 <LI>Call Chain = LeisureBattery1::updateState() &rArr; Errors::addError(short, short) &rArr; operator new(unsigned int) &rArr; malloc &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free
 </UL>
 <BR>[Calls]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetMilliSec
 <LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ArviGet_mA
 <LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ArviGet_mV
-<LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::cleanError(short, short)
-<LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::errorExists(short, short)
+<LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::cleanError(short, short)
+<LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::errorExists(short, short)
 <LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::addError(short, short)
-<LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::sendInfoFrame(unsigned char)
+<LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::sendInfoFrame(unsigned char)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;non-virtual thunk to LeisureBattery1::updateState()
 </UL>
@@ -2315,12 +2315,12 @@ Global Symbols
 <P><STRONG><a name="[9c]"></a>LeisureBattery1::topicReceived(unsigned char*)</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, leisurebattery1.o(.text._ZN15LeisureBattery113topicReceivedEPh))
 <BR>[Address Reference Count : 1]<UL><LI> leisurebattery1.o(.rodata._ZTV15LeisureBattery1)
 </UL>
-<P><STRONG><a name="[9f]"></a>LeisureBattery1::processInfoFrame(unsigned char*)</STRONG> (Thumb, 232 bytes, Stack size 16 bytes, leisurebattery1.o(.text._ZN15LeisureBattery116processInfoFrameEPh))
+<P><STRONG><a name="[9f]"></a>LeisureBattery1::processInfoFrame(unsigned char*)</STRONG> (Thumb, 248 bytes, Stack size 16 bytes, leisurebattery1.o(.text._ZN15LeisureBattery116processInfoFrameEPh))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112 + Unknown Stack Size
 <LI>Call Chain = LeisureBattery1::processInfoFrame(unsigned char*) &rArr; Errors::addError(short, short) &rArr; operator new(unsigned int) &rArr; malloc &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free
 </UL>
-<BR>[Calls]<UL><LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::cleanError(short, short)
-<LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::errorExists(short, short)
+<BR>[Calls]<UL><LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::cleanError(short, short)
+<LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::errorExists(short, short)
 <LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::addError(short, short)
 <LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[189]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_i2d
@@ -2336,7 +2336,7 @@ Global Symbols
 <P><STRONG><a name="[9b]"></a>LeisureBattery1::setOff()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, leisurebattery1.o(.text._ZN15LeisureBattery16setOffEv))
 <BR>[Address Reference Count : 1]<UL><LI> leisurebattery1.o(.rodata._ZTV15LeisureBattery1)
 </UL>
-<P><STRONG><a name="[177]"></a>LeisureBattery1::LeisureBattery1(short)</STRONG> (Thumb, 118 bytes, Stack size 16 bytes, leisurebattery1.o(.text._ZN15LeisureBattery1C2Es))
+<P><STRONG><a name="[177]"></a>LeisureBattery1::LeisureBattery1(short)</STRONG> (Thumb, 134 bytes, Stack size 16 bytes, leisurebattery1.o(.text._ZN15LeisureBattery1C2Es))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112 + Unknown Stack Size
 <LI>Call Chain = LeisureBattery1::LeisureBattery1(short) &rArr; LinClients::setIdInfo(unsigned char, unsigned char) &rArr; operator new(unsigned int) &rArr; malloc &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free
 </UL>
@@ -2348,14 +2348,14 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initTopics()
 </UL>
 
-<P><STRONG><a name="[1e8]"></a>LeisureBattery1::LeisureBattery1__sub_object(short)</STRONG> (Thumb, 118 bytes, Stack size 16 bytes, leisurebattery1.o(.text._ZN15LeisureBattery1C2Es), UNUSED)
+<P><STRONG><a name="[1e8]"></a>LeisureBattery1::LeisureBattery1__sub_object(short)</STRONG> (Thumb, 134 bytes, Stack size 16 bytes, leisurebattery1.o(.text._ZN15LeisureBattery1C2Es), UNUSED)
 
-<P><STRONG><a name="[a6]"></a>SolarRegulator1::updateState()</STRONG> (Thumb, 108 bytes, Stack size 16 bytes, solarregulator1.o(.text._ZN15SolarRegulator111updateStateEv))
+<P><STRONG><a name="[a6]"></a>SolarRegulator1::updateState()</STRONG> (Thumb, 110 bytes, Stack size 16 bytes, solarregulator1.o(.text._ZN15SolarRegulator111updateStateEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = SolarRegulator1::updateState() &rArr; LinMaster::sendInfoFrame(unsigned char) &rArr; Tx_UART3 &rArr; HAL_UART_Transmit
 </UL>
 <BR>[Calls]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetMilliSec
 <LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ArviGet_mA
-<LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::sendInfoFrame(unsigned char)
+<LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::sendInfoFrame(unsigned char)
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> solarregulator1.o(.rodata._ZTV15SolarRegulator1)
 </UL>
@@ -2374,7 +2374,7 @@ Global Symbols
 <P><STRONG><a name="[a3]"></a>SolarRegulator1::setOff()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, solarregulator1.o(.text._ZN15SolarRegulator16setOffEv))
 <BR>[Address Reference Count : 1]<UL><LI> solarregulator1.o(.rodata._ZTV15SolarRegulator1)
 </UL>
-<P><STRONG><a name="[17b]"></a>SolarRegulator1::SolarRegulator1(short)</STRONG> (Thumb, 84 bytes, Stack size 8 bytes, solarregulator1.o(.text._ZN15SolarRegulator1C2Es))
+<P><STRONG><a name="[17b]"></a>SolarRegulator1::SolarRegulator1(short)</STRONG> (Thumb, 86 bytes, Stack size 8 bytes, solarregulator1.o(.text._ZN15SolarRegulator1C2Es))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104 + Unknown Stack Size
 <LI>Call Chain = SolarRegulator1::SolarRegulator1(short) &rArr; LinClients::setIdInfo(unsigned char, unsigned char) &rArr; operator new(unsigned int) &rArr; malloc &rArr; __Heap_Full &rArr; __Heap_ProvideMemory &rArr; free
 </UL>
@@ -2385,7 +2385,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initTopics()
 </UL>
 
-<P><STRONG><a name="[1e9]"></a>SolarRegulator1::SolarRegulator1__sub_object(short)</STRONG> (Thumb, 84 bytes, Stack size 8 bytes, solarregulator1.o(.text._ZN15SolarRegulator1C2Es), UNUSED)
+<P><STRONG><a name="[1e9]"></a>SolarRegulator1::SolarRegulator1__sub_object(short)</STRONG> (Thumb, 86 bytes, Stack size 8 bytes, solarregulator1.o(.text._ZN15SolarRegulator1C2Es), UNUSED)
 
 <P><STRONG><a name="[16d]"></a>CommunicationManager::addClients(Devices*)</STRONG> (Thumb, 168 bytes, Stack size 40 bytes, comunicationmanager.o(.text._ZN20CommunicationManager10addClientsEP7Devices))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96 + Unknown Stack Size
@@ -2479,8 +2479,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetMilliSec
 <LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ArviGet
-<LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::cleanError(short, short)
-<LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::errorExists(short, short)
+<LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::cleanError(short, short)
+<LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::errorExists(short, short)
 <LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Errors::addError(short, short)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;non-virtual thunk to Fuses::updateState()
@@ -2575,7 +2575,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lin::updateInfoFrames()
 </UL>
 
-<P><STRONG><a name="[186]"></a>Errors::cleanError(short, short)</STRONG> (Thumb, 114 bytes, Stack size 40 bytes, errormanager.o(.text._ZN6Errors10cleanErrorEss))
+<P><STRONG><a name="[187]"></a>Errors::cleanError(short, short)</STRONG> (Thumb, 114 bytes, Stack size 40 bytes, errormanager.o(.text._ZN6Errors10cleanErrorEss))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = Errors::cleanError(short, short)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[183]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memmove
@@ -2585,7 +2585,7 @@ Global Symbols
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LeisureBattery1::updateState()
 </UL>
 
-<P><STRONG><a name="[185]"></a>Errors::errorExists(short, short)</STRONG> (Thumb, 92 bytes, Stack size 16 bytes, errormanager.o(.text._ZN6Errors11errorExistsEss))
+<P><STRONG><a name="[186]"></a>Errors::errorExists(short, short)</STRONG> (Thumb, 92 bytes, Stack size 16 bytes, errormanager.o(.text._ZN6Errors11errorExistsEss))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Errors::errorExists(short, short)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Fuses::updateState()
@@ -2731,7 +2731,7 @@ Global Symbols
 <P><STRONG><a name="[bf]"></a>Inverter::getTopicState()</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, inverter.o(.text._ZN8Inverter13getTopicStateEv))
 <BR>[Address Reference Count : 1]<UL><LI> inverter.o(.rodata._ZTV8Inverter)
 </UL>
-<P><STRONG><a name="[be]"></a>Inverter::topicReceived(unsigned char*)</STRONG> (Thumb, 194 bytes, Stack size 24 bytes, inverter.o(.text._ZN8Inverter13topicReceivedEPh))
+<P><STRONG><a name="[be]"></a>Inverter::topicReceived(unsigned char*)</STRONG> (Thumb, 202 bytes, Stack size 24 bytes, inverter.o(.text._ZN8Inverter13topicReceivedEPh))
 <BR><BR>[Stack]<UL><LI>Max Depth = 236 + Unknown Stack Size
 <LI>Call Chain = Inverter::topicReceived(unsigned char*) &rArr; LinMaster::sendControlFrame(unsigned char*, unsigned char) &rArr; MX_USART3_UART_Init &rArr; HAL_LIN_Init &rArr; HAL_UART_MspInit &rArr; HAL_GPIO_Init
 </UL>
@@ -2779,7 +2779,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[157]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_RxCpltCallback
 </UL>
 
-<P><STRONG><a name="[187]"></a>LinMaster::sendInfoFrame(unsigned char)</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, linmaster.o(.text._ZN9LinMaster13sendInfoFrameEh))
+<P><STRONG><a name="[185]"></a>LinMaster::sendInfoFrame(unsigned char)</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, linmaster.o(.text._ZN9LinMaster13sendInfoFrameEh))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = LinMaster::sendInfoFrame(unsigned char) &rArr; Tx_UART3 &rArr; HAL_UART_Transmit
 </UL>
 <BR>[Calls]<UL><LI><a href="#[164]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Tx_UART3
@@ -2971,12 +2971,12 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> leisurebattery1.o(.rodata._ZTV15LeisureBattery1)
 </UL>
-<P><STRONG><a name="[a8]"></a>non-virtual thunk to SolarRegulator1::updateState()</STRONG> (Thumb, 108 bytes, Stack size 16 bytes, solarregulator1.o(.text._ZThn8_N15SolarRegulator111updateStateEv))
+<P><STRONG><a name="[a8]"></a>non-virtual thunk to SolarRegulator1::updateState()</STRONG> (Thumb, 110 bytes, Stack size 16 bytes, solarregulator1.o(.text._ZThn8_N15SolarRegulator111updateStateEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = non-virtual thunk to SolarRegulator1::updateState() &rArr; LinMaster::sendInfoFrame(unsigned char) &rArr; Tx_UART3 &rArr; HAL_UART_Transmit
 </UL>
 <BR>[Calls]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetMilliSec
 <LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ArviGet_mA
-<LI><a href="#[187]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::sendInfoFrame(unsigned char)
+<LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LinMaster::sendInfoFrame(unsigned char)
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> solarregulator1.o(.rodata._ZTV15SolarRegulator1)
 </UL>
@@ -3063,8 +3063,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__cxa_pure_virtual
 </UL>
 
-<P><STRONG><a name="[18b]"></a>checkVariant</STRONG> (Thumb, 100 bytes, Stack size 16 bytes, arvi-main.o(.text.checkVariant))
-<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = checkVariant &rArr; ScanMultiplexores
+<P><STRONG><a name="[18b]"></a>checkVariant</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, arvi-main.o(.text.checkVariant))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = checkVariant &rArr; ScanMultiplexores
 </UL>
 <BR>[Calls]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ArviGet_AD
 <LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ScanMultiplexores

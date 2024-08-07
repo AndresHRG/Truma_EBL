@@ -31,14 +31,22 @@ LeisureBattery1::LeisureBattery1(short _idTopic): Devices(_idTopic), LinClients(
 		volts = 0;
 		checkVariant();
 		
-		if(!variant3)
+		switch(variant)
 		{
-			this->setIdInfo(R_SUPER_VOLT, 8);
-		}
-		else
-		{
-			this->setIdInfo(R_LEAB_1, 8);
-			this->setIdInfo(R_LEAB_2, 7);
+			case 1:
+			case 4:
+			{
+				this->setIdInfo(R_SUPER_VOLT, 8);
+				break;
+			}
+			case 3:
+			{
+				this->setIdInfo(R_LEAB_1, 8);
+				this->setIdInfo(R_LEAB_2, 7);
+				break;
+			}
+			default:
+				break;
 		}
 }
 
@@ -55,15 +63,30 @@ void LeisureBattery1::updateState()
   if(expirationTime > GetMilliSec())
 		return;
 	
-	expirationTime = GetMilliSec() + 2000;
+	expirationTime = GetMilliSec() + 1000;
 	
-	if(!variant || variant4)
+	switch(variant)
 	{
-		if(!variant3)
+		case 1:
+		case 4://supervolt
 		{
 			linMasterInstance->sendInfoFrame(R_SUPER_VOLT); 
+			break;
 		}
-		else
+		case 2:// lectura por placa
+		{
+			mAmps = ArviGet_mA(DRV)/10;
+			mAmps -= 163830;
+			volts = ArviGet_mV(BAT_2)/100;
+			soc = -1;
+			
+			if(ArviGet_mV(BAT_2) <= 10500)
+				Errors::addError(4,71);
+			else if(Errors::errorExists(4,71) && (ArviGet_mV(BAT_2) >= 11500))
+				Errors::cleanError(4,71);
+			break;
+		}
+		case 3://leab
 		{
 			switch(this->numberFrameInfo)
 			{
@@ -80,20 +103,13 @@ void LeisureBattery1::updateState()
 				default:
 					break;
 			}
-		}	
+			break;
+		}
+		default:
+			break;
+	
 	}
-	else
-	{
-		mAmps = ArviGet_mA(DRV)/10;
-		mAmps -= 163830;
-		volts = ArviGet_mV(BAT_2)/100;
-		soc = -1;
-		
-		if(ArviGet_mV(BAT_2) <= 10500)
-			Errors::addError(4,71);
-		else if(Errors::errorExists(4,71) && (ArviGet_mV(BAT_2) >= 11500))
-			Errors::cleanError(4,71);
-	}
+	
 }
 
 void LeisureBattery1::topicReceived(uint8_t* topic)
@@ -107,47 +123,58 @@ int LeisureBattery1::getTopicState()
 
 void LeisureBattery1::processInfoFrame(uint8_t* frame)
 {
-	if(!variant3) // procesamiento de datos para superVolt
+	switch(variant)
 	{
-		volts = frame[0] +(frame[1] << 8);
-		volts /= 10;
-		
-		
-		uint8_t sign = ((frame[3] & 0x80) == 0x80) ? 1 : 0;
-		uint16_t lsbCurrent = frame[2];
-		uint16_t msbCurrent = (frame[3] & 0x7F) ;
-		
-		mAmps =  ((lsbCurrent + (msbCurrent << 8))*10.0);
-		mAmps -= 163830;
-		
-		if(sign == 0)
+		case 1:
+		case 4:// supervolt
 		{
-			mAmps *=-1;
-		}
-		
-		soc = frame[5] * 2;
-	}
-	else // procesamiento de datos para Leab
-	{
-		switch(this->numberFrameInfo)
-		{
-			case frame1:
-			{
-				volts =  frame[0];
-				break;
-			}
-			case frame2:
-			{
-				soc = frame[0];
+			volts = frame[0] +(frame[1] << 8);
+			volts /= 10;
 			
-				mAmps = (frame[1] +(frame[2] << 8))*100;
-				mAmps -= 1638300;
-				mAmps/= 10;
-				break;
+			
+			uint8_t sign = ((frame[3] & 0x80) == 0x80) ? 1 : 0;
+			uint16_t lsbCurrent = frame[2];
+			uint16_t msbCurrent = (frame[3] & 0x7F) ;
+			
+			mAmps =  ((lsbCurrent + (msbCurrent << 8))*10.0);
+			mAmps -= 163830;
+			
+			if(sign == 0)
+			{
+				mAmps *=-1;
 			}
-			default:
-				break;
+			
+			soc = frame[5] * 2;
+			
+			break;
 		}
+		case 3://leab:
+		{
+			switch(this->numberFrameInfo)
+			{
+				case frame1:
+				{
+					volts =  frame[0];
+					break;
+				}
+				case frame2:
+				{
+					soc = frame[0];
+				
+					mAmps = (frame[1] +(frame[2] << 8))*100;
+					mAmps -= 1638300;
+					mAmps/= 10;
+					break;
+				}
+				default:
+					break;
+			}
+			
+			break;
+		}
+		default:
+			break;
+
 	}
 	
 	if(soc/2 <= 10)

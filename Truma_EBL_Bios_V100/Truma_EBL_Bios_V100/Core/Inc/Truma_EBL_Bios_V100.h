@@ -118,9 +118,7 @@ enum eComponentNum
 void Arvi_Setup(void);
 void Arvi_Main(void);
 
-extern bool variant;
-extern bool variant3;
-extern bool variant4;
+extern uint8_t variant;
 extern void checkVariant();
 
 

@@ -61,28 +61,39 @@ void FreshWater1::topicReceived(uint8_t* topic)
 {
   if(topic[1] != 0)
 	{
-		if(!variant)//tornillos
+		switch(variant)
 		{
-			levelFW =0;
-			this->setOn();
-			powerTime = GetMilliSec() + 10000;
+			case 1:
+			case 3:
+			{
+				levelFW =0;
+				this->setOn();
+				powerTime = GetMilliSec() + 10000;
+				
+				if(Utils::ioDigitalRead(FWATER25) > 255)
+						levelFW  =25;
+				if(Utils::ioDigitalRead(FWATER50) > 255)
+						levelFW  =50;
+				if(Utils::ioDigitalRead(FWATER75) > 255)
+						levelFW  =75;
+				if(Utils::ioDigitalRead(FWATER100) > 255)
+						levelFW  =100;
+				
+				break;
+			}
+			case 2:
+			case 4:
+			{
+				if(levelFW > 100.0)
+					levelFW = 100.0;
 			
-			if(Utils::ioDigitalRead(FWATER25) > 255)
-					levelFW  =25;
-			if(Utils::ioDigitalRead(FWATER50) > 255)
-					levelFW  =50;
-			if(Utils::ioDigitalRead(FWATER75) > 255)
-					levelFW  =75;
-			if(Utils::ioDigitalRead(FWATER100) > 255)
-					levelFW  =100;
-		}
-		else //sensor 0-180
-		{
-			if(levelFW > 100.0)
-				levelFW = 100.0;
-			
-			if(levelFW <= 0.0)
-				levelFW = 0.0;
+				if(levelFW <= 0.0)
+					levelFW = 0.0;
+				
+				break;
+			}
+			default:
+				break;
 		}
 
 		counterFW ++;//contador de preguntas de solicitud de nivel de agua

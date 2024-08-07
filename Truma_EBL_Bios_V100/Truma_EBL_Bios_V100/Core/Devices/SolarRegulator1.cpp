@@ -22,7 +22,7 @@ SolarRegulator1::SolarRegulator1(short _idTopic): Devices(_idTopic), LinClients(
     expirationTime = 0;
     state = 0;
 	
-		if(variant3)
+		if(variant == 3)
 		{
 			this->setIdInfo(R_LEAB, 8);
 		}
@@ -46,14 +46,20 @@ void SolarRegulator1::updateState()
 	
 	expirationTime = GetMilliSec() + 1100;
 	
-	if(variant3)
+	switch(variant)
 	{
-		linMasterInstance->sendInfoFrame(R_LEAB); 
-	}
-	else
-	{
-		int mAmps = ArviGet_mA(BLK1_1);
-		state = mAmps/10;
+		case 3:
+		{
+			linMasterInstance->sendInfoFrame(R_LEAB); 
+			break;
+		}
+		default:
+		{
+			int mAmps = ArviGet_mA(BLK1_1);
+			state = mAmps/10;
+			break;
+		}
+	
 	}
 }
 

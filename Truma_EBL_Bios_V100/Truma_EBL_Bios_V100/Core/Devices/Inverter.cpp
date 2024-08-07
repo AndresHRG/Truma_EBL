@@ -48,49 +48,62 @@ void Inverter::topicReceived(uint8_t* topic)
 	{
 		if(topic[1] == off)
 		{
-			if(!variant)
+			switch(variant)
 			{
-				if(!variant3)//dometic 
+				case 1:
 				{
 					inverter[6] = 0x00;
 					inverter[9] = linMasterInstance->calculateCheckSum(inverter, 8);//CRC
 					linMasterInstance->sendControlFrame(inverter, SIZE_BUFFER);
+					break;
 				}
-				else// leab
+				case 2:
+				case 4:
+				{
+					setOff();
+					break;
+				}
+				case 3:
 				{
 					inverter[1] = 0x00;
 					inverter[2] = 0x63;//CRC
 					linMasterInstance->sendControlFrame(inverter, 3);
+					break;
 				}
-			}
-			else
-			{
-				setOff();
+				default:
+					break;
+			
 			}
 			
 			state = 0;	
 		}
 		else
 		{
-			if(!variant)
-			{	
-				if(!variant3)//dometic 
+			switch(variant)
+			{
+				case 1:
 				{
 					inverter[6] = 0x01;
 					inverter[9] = linMasterInstance->calculateCheckSum(inverter, 8);//CRC
-					
 					linMasterInstance->sendControlFrame(inverter, SIZE_BUFFER);
+					break;
 				}
-				else// leab
+				case 2:
+				case 4:
+				{
+					setOn();
+					break;
+				}
+				case 3:
 				{
 					inverter[1] = 0x01;
-					inverter[2] = 0x62;//CRC
+					inverter[2] = 0x63;//CRC
 					linMasterInstance->sendControlFrame(inverter, 3);
+					break;
 				}
-			}
-			else
-			{
-				setOn();
+				default:
+					break;
+			
 			}
 			state = 1;
 		}

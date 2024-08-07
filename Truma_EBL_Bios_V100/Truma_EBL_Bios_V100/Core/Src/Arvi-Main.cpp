@@ -38,9 +38,8 @@ EngineBattery1* eBatteryIntance;
 
 uint64_t updateTimeInfoFrames = 0;
 uint64_t  checkVariantTime = 0;
-bool variant;
-bool variant3;
-bool variant4;
+uint8_t variant;
+
 
 std::vector<SystemDevices*> devices;
 
@@ -196,27 +195,17 @@ void initTopics()
 
 void checkVariant()
 {
-	variant = false;
-	variant3 = false;
-	variant4 = false;
-	
+	variant = 1;
 	ScanMultiplexores();
 	
-	if(ArviGet_AD(BLK5_6) >  255)// usamos de forma provisional esta entrada para cambio de variante 1-2.
-		variant = true;
+	if(ArviGet_AD(BLK5_6) >  255)// usamos de forma provisional esta entrada para cambio de variante 2.
+		variant = 2;
 	
 	if(ArviGet_AD(BLK5_5) >  255)// usamos de forma provisional esta entrada para cambio de variante 3.
-	{
-		variant3 = true;
-		variant = false;
-	}
+		variant = 3;
 	
-	if(ArviGet_AD(BLK5_1) >  255)
-	{
-		variant4 = true;
-		variant3 = false;
-		variant = true;
-	}
+	if(ArviGet_AD(BLK5_1) >  255)// usamos de forma provisional esta entrada para cambio de variante 4.
+		variant = 4;
 }
 
 void Arvi_Setup(void)

@@ -61,28 +61,37 @@ void GrayWater1::topicReceived(uint8_t* topic)
 {	
 	if(topic[1] != 0)
 	{
-		if(!variant)//tornillos
+		switch(variant)
 		{
-			levelGW =0;
-			this->setOn();
-			powerTime = GetMilliSec() + 10000;
-			
-			if(Utils::ioDigitalRead(GWATER25) > 255)
-					levelGW =25;
-			if(Utils::ioDigitalRead(GWATER50) > 255)
-					levelGW =50;
-			if(Utils::ioDigitalRead(GWATER75) > 255)
-					levelGW =75;
-			if(Utils::ioDigitalRead(GWATER100) > 255)
+			case 1:
+			case 3:
+			{
+				levelGW =0;
+				this->setOn();
+				powerTime = GetMilliSec() + 10000;
+				
+				if(Utils::ioDigitalRead(GWATER25) > 255)
+						levelGW =25;
+				if(Utils::ioDigitalRead(GWATER50) > 255)
+						levelGW =50;
+				if(Utils::ioDigitalRead(GWATER75) > 255)
+						levelGW =75;
+				if(Utils::ioDigitalRead(GWATER100) > 255)
 					levelGW =100;
-		}
-		else //sensor 0-180
-		{
-			if(levelGW > 100.0)
+				break;
+			}
+			case 2:
+			case 4:
+			{
+				if(levelGW > 100.0)
 				levelGW = 100.0;
 			
-			if(levelGW <= 0.0)
-				levelGW = 0.0;
+				if(levelGW <= 0.0)
+					levelGW = 0.0;
+				break;
+			}
+			default:
+				break;
 		}
 		
 		counterGW ++;//contador de preguntas de solicitud de nivel de agua
