@@ -58,11 +58,15 @@
 # End of https://www.toptal.com/developers/gitignore/api/keil
 
 .vscode/*
-Truma_EBL_Bios_V100/MDK-ARM/Objets/*.crf
+Truma_EBL_Bios_V100/Truma_EBL_Bios_V100/MDK-ARM/Objets/*.crf
+Truma_EBL_Bios_V100/Truma_EBL_Bios_V100/MDK-ARM/Objets/*.axf
+Truma_EBL_Bios_V100/Truma_EBL_Bios_V100/MDK-ARM/Objets/*.htm
+Truma_EBL_Bios_V100/Truma_EBL_Bios_V100/MDK-ARM/Objets/*.o
+Truma_EBL_Bios_V100/Truma_EBL_Bios_V100/MDK-ARM/Objets/*.d
+Truma_EBL_Bios_V100/Truma_EBL_Bios_V100/MDK-ARM/Objets/*.dep
+Truma_EBL_Bios_V100/Truma_EBL_Bios_V100/MDK-ARM/Objets/*.hex
 
-Truma_EBL_Bios_V100/MDK-ARM/Objets/*.axf
-Truma_EBL_Bios_V100/MDK-ARM/Objets/*.htm
 *.bin
 *.lock
-Truma_EBL_Bios_V100/MDK-ARM/.vscode/c_cpp_properties.json
+Truma_EBL_Bios_V100/Truma_EBL_Bios_V100/MDK-ARM/.vscode/c_cpp_properties.json
 Truma_EBL_Bios_V100/MDK-ARM/.vscode/keil-assistant.log

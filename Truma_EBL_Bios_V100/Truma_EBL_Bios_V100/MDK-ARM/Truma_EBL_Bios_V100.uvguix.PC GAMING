@@ -3624,9 +3624,9 @@
       </Doc>
       <Doc>
         <Name>..\Core\Devices\Inverter.cpp</Name>
-        <ColumnNumber>8</ColumnNumber>
+        <ColumnNumber>77</ColumnNumber>
         <TopLine>45</TopLine>
-        <CurrentLine>79</CurrentLine>
+        <CurrentLine>59</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>
         <PaneID>0</PaneID>
