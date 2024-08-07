@@ -42,16 +42,15 @@ void FreshWater1::updateState()
 	if(expirationTime > GetMilliSec())
 		return;
 	
-	expirationTime = GetMilliSec() + 510;
+	expirationTime = GetMilliSec() + 1110;
 	
-	if(variant)
+	if((variant == 2) || (variant == 4))
 	{
 		this->setOn();
 		levelFW = (float)ArviGet_AD(BLK6_A);
 		levelFW *= 0.14;
 	}
-	
-  if(!variant && (powerTime < GetMilliSec()))
+  else if((powerTime < GetMilliSec()))
 	{
 		setOff();
 	} 

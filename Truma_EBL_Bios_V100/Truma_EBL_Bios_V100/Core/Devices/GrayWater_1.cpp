@@ -42,16 +42,15 @@ void GrayWater1::updateState()
 	if(expirationTime > GetMilliSec())
 		return;
 	
-	expirationTime = GetMilliSec() + 500;
+	expirationTime = GetMilliSec() + 1100;
 	
-	if(variant)
+	if((variant == 2) || (variant == 4))
 	{
 		this->setOn();
 		levelGW = (float)ArviGet_AD(BLK7_A);
 		levelGW *= 0.14;
 	}
-	
-  if(!variant && (powerTime < GetMilliSec()))
+  else if((powerTime < GetMilliSec()))
 	{
 		setOff();
 	} 
@@ -78,6 +77,7 @@ void GrayWater1::topicReceived(uint8_t* topic)
 						levelGW =75;
 				if(Utils::ioDigitalRead(GWATER100) > 255)
 					levelGW =100;
+				
 				break;
 			}
 			case 2:
@@ -88,6 +88,7 @@ void GrayWater1::topicReceived(uint8_t* topic)
 			
 				if(levelGW <= 0.0)
 					levelGW = 0.0;
+				
 				break;
 			}
 			default:
