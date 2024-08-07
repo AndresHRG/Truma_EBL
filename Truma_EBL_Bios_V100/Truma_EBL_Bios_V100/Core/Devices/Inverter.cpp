@@ -67,6 +67,7 @@ void Inverter::topicReceived(uint8_t* topic)
 					setOff();
 				else
 					setOn();
+				
 				break;
 			}
 			case 3:

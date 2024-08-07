@@ -58,10 +58,10 @@
 # End of https://www.toptal.com/developers/gitignore/api/keil
 
 .vscode/*
-MDK-ARM/Replace-V2.0/*.crf
+MDK-ARM/Objets/*.crf
 
-MDK-ARM/Replace-V2.0/RPZ-V310.axf
-MDK-ARM/Replace-V2.0/RPZ-V310.htm
+MDK-ARM/Objets/*.axf
+MDK-ARM/Objets/*.htm
 *.bin
 *.lock
 MDK-ARM/.vscode/c_cpp_properties.json
