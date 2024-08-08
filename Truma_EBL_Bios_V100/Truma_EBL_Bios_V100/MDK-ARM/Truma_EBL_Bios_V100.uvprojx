@@ -315,7 +315,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>2</Optim>
+            <Optim>1</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -1199,6 +1199,16 @@
               <FileName>WaterPump.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\Core\Devices\WaterPump.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>GasBottle.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Core\Devices\GasBottle.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>EisExMode.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Core\Devices\EisExMode.cpp</FilePath>
             </File>
           </Files>
         </Group>

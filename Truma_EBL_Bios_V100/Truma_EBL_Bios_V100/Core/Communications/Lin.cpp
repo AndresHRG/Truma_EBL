@@ -27,6 +27,7 @@ byte firmware[] = {0x7D, 0x7F, 0x06, 0xF2, 0x01, 0x01, 0x01, 0x01, 0x00, 0x00};
 
 bool sendError = false;
 short counterErrors = 1;
+uint8_t eisExmode = off; 
 
 Lin::Lin(): CommunicationManager()
 {
@@ -181,7 +182,8 @@ void Lin::verifyInfoFrame(unsigned char caracter)
 
 void Lin::traslate2Topic(unsigned char* frame)
 {
-	uint8_t topic[2] = {0,0};
+	uint8_t topic[8];
+	memset(topic, 0, 8);
 	
 	switch(frame[0])
 	{
@@ -226,6 +228,7 @@ void Lin::traslate2Topic(unsigned char* frame)
 		}
 		case ctrl_switchs :
 		{
+			eisExmode = frame[1] & 0x03; 
 			uint8_t iLigths = (frame[1] & 0xC0) >> 6;
 			uint8_t eLigths = (frame[2] & 0x03);
 			uint8_t nligths = (frame[2] &0x0C) >> 2;
@@ -328,13 +331,21 @@ void Lin::traslate2Topic(unsigned char* frame)
 		{ 
 			uint8_t measureFWater = frame[1] & 0x03;
 			uint8_t measureGWater = (frame[1] & 0x06) >> 2;
-			
+			float iTemp = ((frame[3] + (frame[4] << 8)) * 0.1) - 273.0;
+			float eTemp = ((frame[5] + (frame[6] << 8)) * 0.1) - 273.0;
+				
 			topic[0] = FreshWater1_Type; //23; // Comprobar cual sera el valor que corresponde realmente
 			topic[1] = measureFWater; 
 			this->processTopic(topic);
 			
 			topic[0] = GrayWater1_Type;//29; // Comprobar cual sera el valor que corresponde realmente
 			topic[1] = measureGWater; 
+			this->processTopic(topic);
+			
+			topic[0] = EisExMode_Type;
+			topic[1] = eisExmode;
+			topic[2] = (uint8_t)iTemp;
+			topic[3] = (uint8_t)eTemp;
 			this->processTopic(topic);
 			
 			break;
@@ -371,9 +382,9 @@ void Lin::updateInfoFrames()
 		infoSwitch[0] = info_switchs;//id msg info
 
 		//representa byte 0 de la doc
-		infoSwitch[1] |= Utils::setBits(0, 1, _ni);
-		infoSwitch[1] |= Utils::setBits(2, 3, _ni);
-		infoSwitch[1] |= Utils::setBits(4, 5, _ni);
+		infoSwitch[1] |= Utils::setBits(0, 1, this->getTopicState(EisExMode_Type) & 0x01);
+		infoSwitch[1] |= Utils::setBits(2, 3, this->getTopicState(EisExMode_Type) & 0x02);
+		infoSwitch[1] |= Utils::setBits(4, 5, this->getTopicState(GasBottle_Type));// Gas Bottle
 		infoSwitch[1] |= Utils::setBits(6, 7, this->getTopicState(InternalLigths_Type)); //iligths
 	
 		//representa byte 1 de la doc

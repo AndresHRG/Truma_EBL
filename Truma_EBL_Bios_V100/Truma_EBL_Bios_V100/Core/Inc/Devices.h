@@ -77,7 +77,9 @@ enum DeviceType {
     Sat_Type,
     SolarRegulator1_Type,
     TPMSSensor_Type,
-    WaterPump_Type
+    WaterPump_Type,
+		GasBottle_Type,
+    EisExMode_Type
 };
 
 class Devices

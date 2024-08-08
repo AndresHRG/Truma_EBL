@@ -8,6 +8,8 @@
 #include "LinMaster.h"
 #include "TopicsList.h"
 #include "ErrorManager.h"
+#include "Utils.h"
+#include "Comm.h"
 
 /****cabeceras de todos los topics****/
 #include "EmptyingValve.h"
@@ -25,8 +27,9 @@
 #include "Ligths_1.h"
 #include "SolarRegulator1.h"
 #include "WaterPump.h"
-#include "Utils.h"
-#include "Comm.h"
+#include "GasBottle.h"
+#include "EisExMode.h"
+
 
 //COMMUNICATIONS
 Lin* linInstance;
@@ -191,6 +194,22 @@ void initTopics()
 		devices.push_back(waterPump);
 		linInstance->addClients(waterPump);
 	}
+	/***************************************/
+	GasBottle* gasBottle = new GasBottle(GasBottle_Type);
+	
+	if(gasBottle != NULL)
+	{
+		devices.push_back(gasBottle);
+		linInstance->addClients(gasBottle);
+	}
+	/***************************************/
+	EisExMode* eisExMode = new EisExMode(EisExMode_Type);
+	
+	if(eisExMode != NULL)
+	{
+		devices.push_back(eisExMode);
+		linInstance->addClients(eisExMode);
+	}
 }
 
 void checkVariant()
@@ -228,7 +247,7 @@ void Arvi_Main(void)
 	if((updateTimeInfoFrames < GetMilliSec()))
 	{
 		linInstance->updateInfoFrames();
-		updateTimeInfoFrames = GetMilliSec() + 300;
+		updateTimeInfoFrames = GetMilliSec() + 50;
 	}
 	
 	if(checkVariantTime < GetMilliSec())
