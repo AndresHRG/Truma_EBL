@@ -1,3 +1,13 @@
+/* *******************************************************************************
+ *       @file              GasBottle.cpp
+ *       @expl              Truma EBL
+ *       @author            Andres Rivas
+ *       @coauthor
+ *       @Date:             08-08-2024
+ *       @copyright         Arvimarine Control Systems SL "ARVIKON"
+ *       @Programming mode  Survival Mode
+ ********************************************************************************/
+ 
 #include "GasBottle.h"
 #include "Truma_EBL_Bios_V100.h"
 #include "Utils.h"
